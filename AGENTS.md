@@ -20,7 +20,8 @@ This Is My Software Factory: a parody of the Full Metal Jacket barracks creed sc
   - `data/chorus.json` holds where each chorus line sits in the raw take and on the timeline. The chorus audio drives timing.
 - `captions/` is the HyperFrames project for the generative cut's locally rendered layers:
   - the captions: `captions.json` is the one file to edit, and `build.mjs` generates the compositions from it;
-  - the end credits card: `compositions/credits-card.html`, edited directly.
+  - the end credits card: `compositions/credits-card.html`, edited directly;
+  - the title frame and README poster: `compositions/title.html` ("The AI Engineer's Creed"), rendered by `npm run title` and put on the cut's first frame.
 - `scripts/storyboard.py` renders the script as a review page in `review/dist/`:
   - the original line next to each parody line
   - playback of the source moment

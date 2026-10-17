@@ -500,6 +500,9 @@ def cut_audio(version: str) -> Path:
 # it still moves (the crossfade finishes as the last shot ends: no frozen frames, author round 7), and the room tail
 # fades out underneath once the fire watch's line is done. The lip sync cut shows the film's actors, so it keeps its plain end.
 CREDITS = {"generative": RENDERS / "credits.mp4"}
+# its first frame is the title card (captions/compositions/title.html, `npm run title`), so a post's preview shows the
+# title: it replaces frame 0 in place, so every later frame and the audio keep their timing (author round 8)
+TITLE = {"generative": RENDERS / "title.png"}
 XFADE = 0.8  # seconds of crossfade, ending with the last shot
 TAIL_FADE = 0.4, 1.5  # the room tail fades from this long after the last shot, over this long
 
@@ -534,10 +537,13 @@ def assemble() -> None:
       card = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(credits)],
                                   capture_output=True, text=True).stdout)
       total = body - XFADE + card
-      ff("-i", str(video), "-i", str(credits), "-i", str(cut_audio(version)), "-filter_complex",
+      title = TITLE.get(version)
+      titled = title is not None and title.exists()
+      ff("-i", str(video), "-i", str(credits), "-i", str(cut_audio(version)), *(["-i", str(title)] if titled else []), "-filter_complex",
          f"[0:v]setsar=1,fps=30000/1001,settb=1001/30000[a];"
          f"[1:v]setsar=1,fps=30000/1001,settb=1001/30000[c];"
-         f"[a][c]xfade=transition=fade:duration={XFADE}:offset={body - XFADE:.3f},format=yuv420p[v];"
+         f"[a][c]xfade=transition=fade:duration={XFADE}:offset={body - XFADE:.3f}" + (",format=yuv420p[x];[x][3:v]overlay=0:0:enable='eq(n,0)'" if titled else "")
+         + ",format=yuv420p[v];"
          f"[2:a]apad,atrim=0:{total:.3f},afade=t=out:st={body + TAIL_FADE[0]:.3f}:d={TAIL_FADE[1]}[au]",
          "-map", "[v]", "-map", "[au]", "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-c:a", "aac", "-b:a", "192k", str(out))
     else:

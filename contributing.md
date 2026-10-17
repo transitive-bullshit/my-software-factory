@@ -39,9 +39,10 @@ uv run --group analysis --group voice --group gen python scripts/full.py assembl
 uv run --group analysis --group voice --group gen python scripts/full.py audit
 uv run --group analysis --group voice --group gen python scripts/full.py page
 
-# 6. the generative cut's credits and captions (HyperFrames, in captions/)
+# 6. the generative cut's title, credits and captions (HyperFrames, in captions/)
+cd captions && npm run title && cd ..                                                   # title frame + docs/poster.jpg
 uv run --group analysis python scripts/credits.py                                       # profile pictures, then the card
-uv run --group analysis --group voice --group gen python scripts/full.py assemble       # crossfade the card onto the cut
+uv run --group analysis --group voice --group gen python scripts/full.py assemble       # title on frame 0, card crossfaded at the end
 uv run --group analysis --group voice --group gen python scripts/captions.py            # word timings from the vocals
 cd captions && npm run captions                                                         # -> renders/full/generative-captioned.mp4
 ```
@@ -55,10 +56,11 @@ Each fal call costs money, so review the keyframe before animating.
 3. `full.py animate <id>`, then `full.py resync <id>` if the shot is lip-synced afterwards (`RESYNC`, `RESYNC_CROP`).
 4. `full.py page` to review it in context, then `full.py assemble`, `full.py audit` and `npm run captions` in `captions/`.
 
-## Captions and credits
+## Title, captions and credits
 
 - **Caption wording or timing:** edit `captions/captions.json`, then `npm run captions` in `captions/` (about 1.5 min). Rerun `scripts/captions.py` only when the audio changes.
 - **Caption look:** edit `captions/build.mjs`.
+- **Title frame and poster:** edit `captions/compositions/title.html`, then `npm run title` (it takes S07's first frame from the cut and also writes `docs/poster.jpg`), `full.py assemble` and `npm run captions`. The title replaces the cut's first frame, so nothing after it moves.
 - **Credits:** edit `captions/compositions/credits-card.html`, then `npm run credits`, `full.py assemble` and `npm run captions`.
 - **Preview:** `npx hyperframes preview` in `captions/` opens Studio with the captions over the cut.
 
@@ -76,6 +78,7 @@ Each fal call costs money, so review the keyframe before animating.
 | R2 backup of the generative cut's clips | `scripts/backup.py` | `data/backup.json` |
 | Cast sheets | `scripts/cast.py` | `media/cast/` |
 | Shots, keyframes, lip sync, both cuts | `scripts/full.py` (`scripts/variants.py` for the S07/S08 tests) | `renders/full/` |
+| Title frame and README poster | `captions/compositions/title.html`, `captions/title.mjs` | `renders/full/title.png`, `docs/poster.jpg` |
 | Credits card | `captions/compositions/credits-card.html`, `scripts/credits.py` | `renders/full/credits.mp4` |
 | Captions | `scripts/captions.py`, `captions/captions.json`, `captions/build.mjs` | `renders/full/generative-captioned.mp4` |
 | Promo cuts | `promo/` (HyperFrames projects) | |
@@ -91,7 +94,7 @@ Each fal call costs money, so review the keyframe before animating.
 data/        script.json (the master timeline), chorus and DI placements, voice picks, the fal cost log
 docs/        plan, the author's decisions, voice notes, the README poster
 scripts/     the Python pipeline (prep, voices, shots, cuts, captions, review pages)
-captions/    HyperFrames: the caption layer and the credits card
+captions/    HyperFrames: the title frame, the caption layer and the credits card
 promo/       HyperFrames: promo cuts (the McGurk demo)
 tests/       offline checks on data/ and captions/
 ```
