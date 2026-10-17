@@ -2,8 +2,8 @@
 
 ## Setup
 
-- Python 3.12 with `uv` (`uv sync --all-groups`), Node 24+ (the HyperFrames CLI runs through `npx`, pinned in each project's `package.json`), ffmpeg and yt-dlp.
-- API keys, in the environment or `~/.env`: `FAL_KEY` (fal.ai: keyframes, animation, lip sync), `ELEVENLABS_API_KEY` (the chorus and the fire watch), `FISH_AUDIO_API_KEY` (Jensen's voice). Every fal call is cached and logged with its cost in `data/fal-log.jsonl`.
+- Python 3.12 with `uv`: `uv sync` installs the light core (the tests); the scripts name the heavy groups they need (`analysis`, `voice`, `gen`), or `uv sync --all-groups` installs everything. Node 24+ (the HyperFrames CLI runs through `npx`, pinned in each project's `package.json`), ffmpeg and yt-dlp.
+- API keys, in the environment or `~/.env`: the names and what each pays for are in [`.env.example`](.env.example). Every fal call is cached and logged with its cost in `data/fal-log.jsonl`, so re-running a step that already succeeded is free.
 - The source clip, stems, cast photos and voice references are not in git (see below). Fetch the clip first; the rest is rebuilt by the pipeline or kept locally.
 
 Or hand it to a coding agent in this folder:
@@ -46,7 +46,16 @@ uv run --group analysis --group voice --group gen python scripts/captions.py    
 cd captions && npm run captions                                                         # -> renders/full/generative-captioned.mp4
 ```
 
-## Changing captions or credits
+## Redo a shot
+
+Each fal call costs money, so review the keyframe before animating.
+
+1. In `scripts/full.py`, edit the shot's keyframe prompt (`KEYS`) or motion brief (`ANIM`), and bump its revision (`KEY_REV` or `ANIM_REV`) so the old take stays.
+2. `full.py keyframes <id>` makes the options in `media/full/keyframes/`; record the pick in `media/full/keyframes/picks.json`.
+3. `full.py animate <id>`, then `full.py resync <id>` if the shot is lip-synced afterwards (`RESYNC`, `RESYNC_CROP`).
+4. `full.py page` to review it in context, then `full.py assemble`, `full.py audit` and `npm run captions` in `captions/`.
+
+## Captions and credits
 
 - **Caption wording or timing:** edit `captions/captions.json`, then `npm run captions` in `captions/` (about 1.5 min). Rerun `scripts/captions.py` only when the audio changes.
 - **Caption look:** edit `captions/build.mjs`.
@@ -70,6 +79,21 @@ cd captions && npm run captions                                                 
 | Captions | `scripts/captions.py`, `captions/captions.json`, `captions/build.mjs` | `renders/full/generative-captioned.mp4` |
 | Promo cuts | `promo/` (HyperFrames projects) | |
 | Review pages | `scripts/storyboard.py`, `timing_page.py`, `voice_pages.py`, `variants_page.py` | `review/dist/` |
+
+## Tests and CI
+
+`uv run pytest -q` checks the committed data offline: the shots tile the source window, every parody line stays within its syllable budget (or records the overrun), every read is placed whole and never re-timed, and the captions match the script without overlapping and match the built caption composition. CI (`.github/workflows/test.yml`) runs them with `py_compile` on every push, with no keys, media or paid APIs.
+
+## Repo map
+
+```text
+data/        script.json (the master timeline), chorus and DI placements, voice picks, the fal cost log
+docs/        plan, the author's decisions, voice notes, the README poster
+scripts/     the Python pipeline (prep, voices, shots, cuts, captions, review pages)
+captions/    HyperFrames: the caption layer and the credits card
+promo/       HyperFrames: promo cuts (the McGurk demo)
+tests/       offline checks on data/ and captions/
+```
 
 ## Not in the repo
 

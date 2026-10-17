@@ -1,6 +1,6 @@
 # Project: my-software-factory
 
-This Is My Software Factory: a parody of the Full Metal Jacket barracks creed scene. AI engineers are the recruits and Jensen Huang is the drill instructor. Python tooling only so far (uv).
+This Is My Software Factory: a parody of the Full Metal Jacket barracks creed scene. AI engineers are the recruits and Jensen Huang is the drill instructor. Python tooling (uv), plus HyperFrames projects for the captions, credits and promos. See `contributing.md` for setup and commands.
 
 ## Mental model
 
@@ -33,9 +33,11 @@ This Is My Software Factory: a parody of the Full Metal Jacket barracks creed sc
   - `promo/review-sync.sh <name>`: runs HyperFrames Studio on a copy in `promo/.review/<name>`, never on the source.
   - Renders and exports go to `renders/promo/`; the finished files are in `renders/promo/final/`.
 
-## Commands
+## Costs and side effects
 
-Setup, the pipeline in order, and where each step's code and output live are in `contributing.md`.
+- fal calls cost money (keyframes, animation, lip sync); so do ElevenLabs and Fish Audio credits. Ask before regenerating, and show keyframes or sheets for approval first. Every fal call is cached and logged with its cost in `data/fal-log.jsonl`.
+- Keys come from the environment or `~/.env` (names in `.env.example`); never print them.
+- Posting or publishing anything (promo cuts included) is the author's call.
 
 ## Conventions
 
@@ -46,6 +48,10 @@ Setup, the pipeline in order, and where each step's code and output live are in 
 - Never re-time generated audio (stretch, squeeze, or cut a read apart to re-space it). Regenerate instead, and place reads whole.
 - Put review choices (takes, options) on the timing page, next to the lines they affect.
 - Heavy models each run in their own process. MLX and torch together in one process can deadlock.
+
+## Checks
+
+- `uv run pytest -q` runs the offline checks on the committed data (`tests/`); CI runs them with `py_compile` on every push. `uv sync` prunes `.venv` to the groups you name, so run scripts with `uv run --group ...` as `contributing.md` shows.
 
 ## Not in git
 

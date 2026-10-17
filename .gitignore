@@ -1,33 +1,83 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/playwright-report
+/test-results
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
 .DS_Store
+*.pem
+
+# ide
+.idea
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# pnpm
+.pnpm-store
+
+# local env files
 .env
 .env.local
+local.env
+.env.build
+.env.development.local
+.env.test.local
+.env.production.local
 
-# environments
+# vercel
+.vercel
+
+# local work
+/work
+
+# environments and third-party checkouts
 /.venv
 __pycache__/
 *.pyc
+# the HyperFrames projects (captions/, promo/*) install their own
+node_modules/
 /.claude/settings.local.json
-# project skills installed by HyperFrames (`npx hyperframes skills update` reinstalls them)
+# HyperFrames' project skills (`npx hyperframes skills update` reinstalls them)
 /.claude/skills
-# copyrighted source footage, audio and transcripts (never committed)
+
+# copyrighted source footage, audio and transcripts, the cast's photos and voice references (never committed)
 /media
 /reference
 /transcript
+
 # derived outputs (regenerable)
 /frames
 /review/dist
 /renders
 /.cache
-# HyperFrames projects (captions/, promo/*): dependencies, renders, Studio caches, review frames
-node_modules/
-.hyperframes/
-.thumbnails/
-.waveform-cache/
 /captions/renders
 /captions/assets
 /promo/*/renders
 /promo/.review
-# safety net: audio and video by extension (use `git add -f` for a deliberate exception)
+# HyperFrames Studio caches
+.hyperframes/
+.thumbnails/
+.waveform-cache/
+
+# safety net: every audio and video file here is copyrighted or derived (use `git add -f` for a deliberate exception)
 *.mp3
 *.wav
 *.flac
@@ -38,5 +88,3 @@ node_modules/
 *.mov
 *.webm
 *.mkv
-*.gif
-*.exr

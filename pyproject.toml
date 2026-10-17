@@ -6,26 +6,27 @@ requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [dependency-groups]
-# Scene analysis (scripts/): stem split, word timings, shot detection, contact sheets. Heavy; not needed for CI.
+# The offline checks (tests/, CI): installed by default, nothing heavy.
+dev = ["pytest>=8"]
+# Audio and image work (scripts/): stem split, Whisper word timings, mixing, contact sheets, keyframes. Heavy; not needed for CI.
 analysis = [
   "audio-separator[cpu]>=0.47",
-  "audioread>=3.0",
   "mlx-whisper>=0.4.3 ; platform_machine == 'arm64' and sys_platform == 'darwin'",
   "numpy>=2.0",
-  "opencv-python-headless>=4.10",
   "pillow>=11",
-  "scenedetect>=0.7.1",
+  "scipy>=1.14",
   "soundfile>=0.13"
 ]
 gen = [
     "fal-client>=1.0.3",
 ]
-# Speaker work (scripts/jensen_ref.py): speaker embeddings to split Jensen from the host.
+# Speaker work and alignment (scripts/voice_ref.py, jensen_ref.py, captions.py): speaker embeddings, forced alignment.
 voice = [
     "numpy>=2.0",
     "scikit-learn>=1.5",
     "soundfile>=0.13",
     "speechbrain>=1.0",
+    "torch>=2.11",
     "torchaudio>=2.11.0",
 ]
 

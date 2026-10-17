@@ -4,6 +4,8 @@
 
 > Full Metal Jacket's barracks creed, recast for AI engineering: "This is my software factory."
 
+**[Watch the spin-off: the McGurk effect in AI lip sync](https://youtu.be/-VAw_z6oKpQ)**
+
 AI engineers on X are the recruits and Jensen Huang is the drill instructor. Every line is rewritten to fit the original's timing, then performed again: the recruits' creed is one sung chorus take (Eleven Music), and Jensen's orders are a voice clone (Fish Audio). There are two cuts:
 
 - **Lip sync:** the film's own footage, with every mouth re-synced to the new lines (Fal Sync-3).
