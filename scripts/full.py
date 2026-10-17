@@ -458,6 +458,7 @@ CREDITS = RENDERS / "credits.mp4"
 # its first frame is the title card (captions/compositions/title.html, `npm run title`), so a post's preview shows the
 # title: it replaces frame 0 in place, so every later frame and the audio keep their timing (author round 8)
 TITLE = RENDERS / "title.png"
+SOUNDTRACK = RENDERS / "generative-soundtrack.wav"  # the cut's audio, lossless (48 kHz, 24-bit)
 XFADE = 0.8  # seconds of crossfade, ending with the last shot
 TAIL_FADE = 0.4, 1.5  # the room tail fades from this long after the last shot, over this long
 
@@ -489,13 +490,17 @@ def assemble() -> None:
                                 capture_output=True, text=True).stdout)
     total = body - XFADE + card
     titled = TITLE.exists()
-    ff("-i", str(video), "-i", str(CREDITS), "-i", str(cut_audio()), *(["-i", str(TITLE)] if titled else []), "-filter_complex",
+    # the soundtrack, lossless (scripts/release.py builds the YouTube and X files from it): the mix, padded to the
+    # cut's length, with the room tail faded under the credits
+    ff("-i", str(cut_audio()), "-af", f"apad,atrim=0:{total:.3f},afade=t=out:st={body + TAIL_FADE[0]:.3f}:d={TAIL_FADE[1]}",
+       "-ar", "48000", "-c:a", "pcm_s24le", str(SOUNDTRACK))
+    # near-lossless (crf 12): the master the captions are laid over and the exports are made from
+    ff("-i", str(video), "-i", str(CREDITS), "-i", str(SOUNDTRACK), *(["-i", str(TITLE)] if titled else []), "-filter_complex",
        f"[0:v]setsar=1,fps=30000/1001,settb=1001/30000[a];"
        f"[1:v]setsar=1,fps=30000/1001,settb=1001/30000[c];"
        f"[a][c]xfade=transition=fade:duration={XFADE}:offset={body - XFADE:.3f}" + (",format=yuv420p[x];[x][3:v]overlay=0:0:enable='eq(n,0)'" if titled else "")
-       + ",format=yuv420p[v];"
-       f"[2:a]apad,atrim=0:{total:.3f},afade=t=out:st={body + TAIL_FADE[0]:.3f}:d={TAIL_FADE[1]}[au]",
-       "-map", "[v]", "-map", "[au]", "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-c:a", "aac", "-b:a", "192k", str(out))
+       + ",format=yuv420p[v]",
+       "-map", "[v]", "-map", "2:a", "-c:v", "libx264", "-crf", "12", "-preset", "slow", "-c:a", "aac", "-b:a", "320k", str(out))
   else:
     ff("-i", str(video), "-i", str(cut_audio()), "-map", "0:v", "-map", "1:a",
        "-vf", f"tpad=stop_mode=clone:stop_duration={END_HOLD}", "-c:v", "libx264", "-crf", "18", "-preset", "fast",

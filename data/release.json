@@ -1,0 +1,19 @@
+{
+ "x": {
+  "file": "renders/final/ai-engineers-creed-x.mp4",
+  "url": "https://assets.cultural-alignment.com/ai-engineers-creed/6ff14cd31eb6ce12b78239eec3347ce08cc04ba6ddf0c80655b42377bb2e8ff7.mp4",
+  "bytes": 47946116,
+  "sha256": "6ff14cd31eb6ce12b78239eec3347ce08cc04ba6ddf0c80655b42377bb2e8ff7"
+ },
+ "youtube": {
+  "file": "renders/final/ai-engineers-creed-youtube.mp4",
+  "url": "https://www.youtube.com/watch?v=GT9zYmPhSys",
+  "title": "The AI Engineer's Creed (a Full Metal Jacket parody)",
+  "published": "2026-10-17",
+  "visibility": "public"
+ },
+ "notion": {
+  "url": "https://app.notion.com/p/3fcedb27f124817c99a9c35e286ddd7e",
+  "status": "draft (Public and Featured off)"
+ }
+}

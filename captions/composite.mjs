@@ -11,5 +11,5 @@ const video = resolve(here, "..", data.video);
 const overlay = join(here, "renders", "captions-overlay.mov");
 const out = video.replace(/\.mp4$/, "-captioned.mp4");
 execFileSync("ffmpeg", ["-v", "error", "-y", "-i", video, "-i", overlay, "-filter_complex", "[0:v][1:v]overlay=0:0:format=auto:shortest=1,format=yuv420p[v]",
-  "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-c:a", "copy", out], { stdio: "inherit" });
+  "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "12", "-preset", "slow", "-c:a", "copy", out], { stdio: "inherit" });
 console.log(out);

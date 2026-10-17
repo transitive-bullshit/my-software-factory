@@ -245,3 +245,9 @@ The author's calls. They override the research in `docs/plan.md`.
   - **Look:** the captions' own treatment over S07's first frame. Of four layouts, the author picked B: the title as a fully lit caption line, with the subtitle as a quieter line beneath (`captions/compositions/title.html`).
   - **Placement:** it replaces the generative cut's first frame in place, so a post's preview shows it and every later frame and the audio keep their timing. It is also the README poster.
 - **The lip sync cut is dropped (round 8, author's call):** the project is now the fully generative cut alone, with no film footage. `full.py` lost its `lipsync` step and the cut switch; `di.py` keeps the film-timed base timeline for the review pages. The S07/S08 direction test (`variants.py`, `variants_page.py`) keeps its lip sync variant as the record of that comparison. The cut's local renders and sync-3 clips were moved to the Trash.
+- **Release, round 9 (author):**
+  - **Master:** the cut and its captioned composite are now encoded near-lossless (crf 12), and `full.py assemble` keeps the soundtrack lossless (`renders/full/generative-soundtrack.wav`).
+  - **Exports:** `scripts/release.py` makes the YouTube and X files from the master with the McGurk demo's settings: Google's recommended encode for YouTube, and capped bitrate with faststart for X.
+  - **YouTube:** published public as "The AI Engineer's Creed (a Full Metal Jacket parody)", https://www.youtube.com/watch?v=GT9zYmPhSys. Its thumbnail is the title card; it is marked not made for kids, AI use yes, category Comedy.
+  - **X and R2:** the X cut is on R2, content-addressed under `ai-engineers-creed/` (`data/release.json`).
+  - **Notion:** a Projects entry, "The AI Engineer’s Creed — Full Metal Jacket Parody", is a draft (Public and Featured off) awaiting review.

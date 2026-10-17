@@ -44,7 +44,11 @@ cd captions && npm run title && cd ..                                           
 uv run --group analysis python scripts/credits.py                                       # profile pictures, then the card
 uv run --group analysis --group voice --group gen python scripts/full.py assemble       # title on frame 0, card crossfaded at the end
 uv run --group analysis --group voice --group gen python scripts/captions.py            # word timings from the vocals
-cd captions && npm run captions                                                         # -> renders/full/generative-captioned.mp4
+cd captions && npm run captions                                                         # -> renders/full/generative-captioned.mp4 (the master)
+
+# 7. the release: YouTube and X exports in renders/final/, then the X cut on R2 (its URL goes in data/release.json)
+uv run --group analysis python scripts/release.py export
+uv run python scripts/release.py upload --env <file with S3_* keys>
 ```
 
 ## Redo a shot
@@ -81,6 +85,7 @@ Each fal call costs money, so review the keyframe before animating.
 | Title frame and README poster | `captions/compositions/title.html`, `captions/title.mjs` | `renders/full/title.png`, `docs/poster.jpg` |
 | Credits card | `captions/compositions/credits-card.html`, `scripts/credits.py` | `renders/full/credits.mp4` |
 | Captions | `scripts/captions.py`, `captions/captions.json`, `captions/build.mjs` | `renders/full/generative-captioned.mp4` |
+| Release exports and the X cut on R2 | `scripts/release.py` | `renders/final/`, `data/release.json` |
 | Promo cuts | `promo/` (HyperFrames projects) | |
 | Review pages | `scripts/storyboard.py`, `timing_page.py`, `voice_pages.py`, `variants_page.py` | `review/dist/` |
 
