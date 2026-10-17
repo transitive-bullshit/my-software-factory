@@ -73,6 +73,7 @@ Each fal call costs money, so review the keyframe before animating.
 | Drill instructor and fire watch lines | `scripts/di.py`, `scripts/fish.py`, `scripts/eleven.py`, `scripts/firewatch.py` | `data/di*.json`, `data/voices.json` |
 | Jensen voice reference | `scripts/voice_ref.py`, `scripts/jensen_ref.py` | `reference/voice/jensen/` |
 | fal calls (cached, cost-logged) | `scripts/fal_run.py` | `data/fal-log.jsonl` |
+| R2 backup of the generative cut's clips | `scripts/backup.py` | `data/backup.json` |
 | Cast sheets | `scripts/cast.py` | `media/cast/` |
 | Shots, keyframes, lip sync, both cuts | `scripts/full.py` (`scripts/variants.py` for the S07/S08 tests) | `renders/full/` |
 | Credits card | `captions/compositions/credits-card.html`, `scripts/credits.py` | `renders/full/credits.mp4` |
@@ -98,5 +99,6 @@ tests/       offline checks on data/ and captions/
 ## Not in the repo
 
 - `media/`, `reference/`, `transcript/`: the copyrighted source clip and its stems and transcripts, the cast's photos and the voice references, plus every generated take. Never commit them, and never write the film's dialogue into tracked files: refer to its lines by id with a paraphrased gist.
+- The approved clip behind each shot of the fully generative cut is backed up to R2 (paid fal output, otherwise only on one disk). `uv run python scripts/backup.py restore` downloads any that are missing, checked against `data/backup.json`; no keys needed. `backup.py upload --env <file>` adds new ones with the `S3_*` keys. The lip sync cut's clips are the film's footage, so they stay off the public bucket.
 - `renders/`, `frames/`, `review/dist/`, `captions/renders/`, `captions/assets/`, `promo/.review/`: regenerable output. Review pages embed film frames, so they stay local.
 - `.claude/skills/`: HyperFrames' project skills; `npx hyperframes skills update` reinstalls them.

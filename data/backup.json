@@ -1,0 +1,72 @@
+{
+ "media/full/generative/S07-ls.mp4": {
+  "cut": "generative",
+  "shot": "S07",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/630ef126b545e5ae2fd03bd5ddd483006fda437c68f55cedb180b292e4364323.mp4",
+  "bytes": 5841363,
+  "sha256": "630ef126b545e5ae2fd03bd5ddd483006fda437c68f55cedb180b292e4364323"
+ },
+ "media/full/generative/S09.mp4": {
+  "cut": "generative",
+  "shot": "S09",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/509c19c3c49b75ee230adc79da3ce990af5f42e695cc8b0be590e18a4ccc9c22.mp4",
+  "bytes": 17000660,
+  "sha256": "509c19c3c49b75ee230adc79da3ce990af5f42e695cc8b0be590e18a4ccc9c22"
+ },
+ "media/full/generative/S10-r6-ls.mp4": {
+  "cut": "generative",
+  "shot": "S10",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/27358e3beaceb4c0bdf8350bcd540dade880a71d923b8c0066ec0964857296f9.mp4",
+  "bytes": 14299431,
+  "sha256": "27358e3beaceb4c0bdf8350bcd540dade880a71d923b8c0066ec0964857296f9"
+ },
+ "media/full/generative/S11-r3.mp4": {
+  "cut": "generative",
+  "shot": "S11",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/9989c949602e1575d75955304574d1fc518937910ef5e03c6e0eb8d19b43961b.mp4",
+  "bytes": 17968470,
+  "sha256": "9989c949602e1575d75955304574d1fc518937910ef5e03c6e0eb8d19b43961b"
+ },
+ "media/full/generative/S12-r4.mp4": {
+  "cut": "generative",
+  "shot": "S12",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/06f016d1510a4a7706d25499d3fcbfea35225de0327ce63165be1adfd0260cc0.mp4",
+  "bytes": 10594095,
+  "sha256": "06f016d1510a4a7706d25499d3fcbfea35225de0327ce63165be1adfd0260cc0"
+ },
+ "media/full/generative/S13-r3.mp4": {
+  "cut": "generative",
+  "shot": "S13",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/897d64664b8cdbea6925a12d02a0e49cc42b79d037b4268b84d11a3534ca9d0d.mp4",
+  "bytes": 3756449,
+  "sha256": "897d64664b8cdbea6925a12d02a0e49cc42b79d037b4268b84d11a3534ca9d0d"
+ },
+ "media/full/generative/S14-r3.mp4": {
+  "cut": "generative",
+  "shot": "S14",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/5426dc8458801704add65bbb2199512a74d8491dc468ecab6239198d6c24f610.mp4",
+  "bytes": 5389039,
+  "sha256": "5426dc8458801704add65bbb2199512a74d8491dc468ecab6239198d6c24f610"
+ },
+ "media/full/generative/S15-1-r2.mp4": {
+  "cut": "generative",
+  "shot": "S15-1",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/87e429e566832590f10917d5d524853ef32237da9df158dea110ad5995bc1667.mp4",
+  "bytes": 4625081,
+  "sha256": "87e429e566832590f10917d5d524853ef32237da9df158dea110ad5995bc1667"
+ },
+ "media/full/generative/S15-2-r3-ls.mp4": {
+  "cut": "generative",
+  "shot": "S15-2",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/02305ef1fbf03151350880f49fb6d1a71b425a8d2af20515563c41c6c7c19f08.mp4",
+  "bytes": 4141730,
+  "sha256": "02305ef1fbf03151350880f49fb6d1a71b425a8d2af20515563c41c6c7c19f08"
+ },
+ "media/variants/generative/h3audio-S08-r4-anchor.mp4": {
+  "cut": "generative",
+  "shot": "S08",
+  "url": "https://assets.cultural-alignment.com/my-software-factory/cc4a2fc186ca92ad4766b4bb6a80bddd6ca29fa040a9ec2585244b25656ce6ee.mp4",
+  "bytes": 15930389,
+  "sha256": "cc4a2fc186ca92ad4766b4bb6a80bddd6ca29fa040a9ec2585244b25656ce6ee"
+ }
+}

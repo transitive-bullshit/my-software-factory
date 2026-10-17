@@ -60,3 +60,4 @@ This Is My Software Factory: a parody of the Full Metal Jacket barracks creed sc
 - The storyboard pulls the original lines from `/transcript` at build time, so its output stays in the ignored `/review/dist`.
 - Frames, renders and review pages (`/frames`, `/renders`, `/review/dist`) are derived and ignored.
 - `.gitignore` also blocks audio and video by extension.
+- The fully generative cut's approved clips are backed up to R2 (`scripts/backup.py`, manifest `data/backup.json`). After approving a new take for a shot, run `backup.py upload` again.
