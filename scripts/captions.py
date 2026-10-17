@@ -141,7 +141,7 @@ def main() -> None:
   voices = json.loads((ROOT / "data" / "voices.json").read_text())
   di = json.loads((ROOT / "data" / "di-gen.json").read_text())["lines"]
   chorus = json.loads((ROOT / "data" / "chorus.json").read_text())
-  sp, starts = full.spans("generative"), full.out_start("generative")
+  sp, starts = full.spans(), full.out_start()
   timed: dict[str, list[list[float]]] = {}
 
   # where each line sits: Whisper finds it in its read; the audible edges and the cut placement give its span

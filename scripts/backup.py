@@ -1,11 +1,8 @@
-"""Back up the paid generated clips the final cuts are built from to R2, and restore them on a fresh clone.
+"""Back up the paid generated clips the final cut is built from to R2, and restore them on a fresh clone.
 
-Only the approved clip each shot of a backed-up cut actually uses (scripts/full.py sources) is kept: content-addressed
+Only the approved clip each shot of the cut actually uses (scripts/full.py sources) is kept: content-addressed
 (<sha256>.mp4) under my-software-factory/ in the S3_BUCKET_NAME bucket, served from S3_PUBLIC_URL. The manifest,
 data/backup.json, is committed: it maps each local path to its URL, size and hash, so restoring needs no keys.
-
-Only the fully generative cut is backed up. The lip sync cut's clips are the film's own footage, which stays off
-public hosting, like everything copyrighted in this project.
 
   uv run --group analysis --group voice --group gen python scripts/backup.py upload --env <file with S3_* keys>
   uv run python scripts/backup.py restore        # download any backed-up clip missing locally, checking its hash
@@ -26,7 +23,6 @@ from urllib.parse import quote, urlparse
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "data" / "backup.json"
 PREFIX = "my-software-factory"
-CUTS = ("generative",)
 UA = {"user-agent": "my-software-factory-backup/1.0"}  # the CDN turns away Python's default user agent
 
 
@@ -100,19 +96,18 @@ def upload() -> None:
 
   base = env("S3_PUBLIC_URL").rstrip("/")
   manifest = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
-  for cut in CUTS:
-    for shot, path in full.sources(cut).items():
-      rel = path.relative_to(ROOT).as_posix()
-      digest, size = sha256(path), path.stat().st_size
-      url = f"{base}/{PREFIX}/{digest}{path.suffix}"
-      if public_size(url) != size:
-        put(f"{PREFIX}/{digest}{path.suffix}", path, digest)
-        if public_size(url, tries=4) != size:
-          sys.exit(f"{url}: the public copy doesn't match the {size} bytes uploaded")
-        print(f"uploaded {rel} -> {url}")
-      else:
-        print(f"already there: {rel}")
-      manifest[rel] = {"cut": cut, "shot": shot, "url": url, "bytes": size, "sha256": digest}
+  for shot, path in full.sources().items():
+    rel = path.relative_to(ROOT).as_posix()
+    digest, size = sha256(path), path.stat().st_size
+    url = f"{base}/{PREFIX}/{digest}{path.suffix}"
+    if public_size(url) != size:
+      put(f"{PREFIX}/{digest}{path.suffix}", path, digest)
+      if public_size(url, tries=4) != size:
+        sys.exit(f"{url}: the public copy doesn't match the {size} bytes uploaded")
+      print(f"uploaded {rel} -> {url}")
+    else:
+      print(f"already there: {rel}")
+    manifest[rel] = {"shot": shot, "url": url, "bytes": size, "sha256": digest}
   MANIFEST.write_text(json.dumps(dict(sorted(manifest.items())), indent=1) + "\n")
   print(f"{len(manifest)} clips in {MANIFEST.relative_to(ROOT)}")
 

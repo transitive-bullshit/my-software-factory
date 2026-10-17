@@ -26,15 +26,15 @@ uv run --group analysis --group voice python scripts/timing_page.py
 
 # 3. the voices: one Eleven Music chorus take cut into scenes, then the solo lines on top
 uv run --group analysis python scripts/chorus_music.py build gaps
-uv run --group analysis --group voice python scripts/di.py                  # the lip sync cut's timeline
-uv run --group analysis --group voice python scripts/di.py --variant gen    # the generative cut's own timeline
+uv run --group analysis --group voice python scripts/di.py                  # the film-timed base (review pages)
+uv run --group analysis --group voice python scripts/di.py --variant gen    # the cut's own timeline
 uv run --group analysis python scripts/voice_pages.py                      # audition and record-to-picture pages
 
 # 4. the cast and the fully generative shots (fal)
 uv run --group analysis --group voice --group gen python scripts/cast.py headshots|sheets|page
-uv run --group analysis --group voice --group gen python scripts/full.py prep|lipsync|keyframes|animate|resync
+uv run --group analysis --group voice --group gen python scripts/full.py prep|keyframes|animate|resync
 
-# 5. both cuts, checked: renders/full/{lipsync,generative}.mp4 and review/dist/full.html
+# 5. the cut, checked: renders/full/generative.mp4 and review/dist/full.html
 uv run --group analysis --group voice --group gen python scripts/full.py assemble
 uv run --group analysis --group voice --group gen python scripts/full.py audit
 uv run --group analysis --group voice --group gen python scripts/full.py page
@@ -77,7 +77,7 @@ Each fal call costs money, so review the keyframe before animating.
 | fal calls (cached, cost-logged) | `scripts/fal_run.py` | `data/fal-log.jsonl` |
 | R2 backup of the generative cut's clips | `scripts/backup.py` | `data/backup.json` |
 | Cast sheets | `scripts/cast.py` | `media/cast/` |
-| Shots, keyframes, lip sync, both cuts | `scripts/full.py` (`scripts/variants.py` for the S07/S08 tests) | `renders/full/` |
+| Shots, keyframes, lip sync passes, the cut | `scripts/full.py` (`scripts/variants.py` for the S07/S08 tests) | `renders/full/` |
 | Title frame and README poster | `captions/compositions/title.html`, `captions/title.mjs` | `renders/full/title.png`, `docs/poster.jpg` |
 | Credits card | `captions/compositions/credits-card.html`, `scripts/credits.py` | `renders/full/credits.mp4` |
 | Captions | `scripts/captions.py`, `captions/captions.json`, `captions/build.mjs` | `renders/full/generative-captioned.mp4` |
@@ -102,6 +102,6 @@ tests/       offline checks on data/ and captions/
 ## Not in the repo
 
 - `media/`, `reference/`, `transcript/`: the copyrighted source clip and its stems and transcripts, the cast's photos and the voice references, plus every generated take. Never commit them, and never write the film's dialogue into tracked files: refer to its lines by id with a paraphrased gist.
-- The approved clip behind each shot of the fully generative cut is backed up to R2 (paid fal output, otherwise only on one disk). `uv run python scripts/backup.py restore` downloads any that are missing, checked against `data/backup.json`; no keys needed. `backup.py upload --env <file>` adds new ones with the `S3_*` keys. The lip sync cut's clips are the film's footage, so they stay off the public bucket.
+- The approved clip behind each shot of the fully generative cut is backed up to R2 (paid fal output, otherwise only on one disk). `uv run python scripts/backup.py restore` downloads any that are missing, checked against `data/backup.json`; no keys needed. `backup.py upload --env <file>` adds new ones with the `S3_*` keys.
 - `renders/`, `frames/`, `review/dist/`, `captions/renders/`, `captions/assets/`, `promo/.review/`: regenerable output. Review pages embed film frames, so they stay local.
 - `.claude/skills/`: HyperFrames' project skills; `npx hyperframes skills update` reinstalls them.

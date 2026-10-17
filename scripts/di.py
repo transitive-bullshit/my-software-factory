@@ -32,7 +32,7 @@ IN_LINE, WET_HP = 0.0, 200.0  # reverb while a line is said (none: the word stay
 # reads placed off their slot on purpose: where the read starts (source-clip seconds)
 PLACE = {"D01": 39.8}  # author: "Prompt!" came too late in S07 (slot 40.65)
 # variant timelines: the fully generative cut gets to "Auto-merge!" sooner (author), 1 s after "Push!" ends; its S13
-# shortens to match (scripts/full.py). The lip sync cut keeps the film's timing, since its footage is the film.
+# shortens to match (scripts/full.py). The base timeline keeps the film's timing (the timing and voice review pages).
 VARIANTS = {"gen": {"D05": 95.6}}
 
 

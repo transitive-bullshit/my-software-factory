@@ -27,7 +27,7 @@ very precisely for each scene". They must be "really easy and quick to make chan
 
 ## Notes
 
-- Generative cut only (the lip sync cut is not captioned).
+- The fully generative cut (the project's only cut since the lip sync cut was dropped).
 - Captions end before the credits crossfade (the credits card carries no captions).
 - Timings come from our own source reads mapped onto the cut's timeline (it drops 0.7 s at S15-1), not a fresh transcription of the finished mix.
 - Design left to the workflow; no storyboard review: one finished render, then the author reviews it.

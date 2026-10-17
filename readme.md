@@ -6,12 +6,9 @@
 
 **[Watch the spin-off: the McGurk effect in AI lip sync](https://youtu.be/-VAw_z6oKpQ)**
 
-AI engineers on X are the recruits and Jensen Huang is the drill instructor. Every line is rewritten to fit the original's timing, then performed again: the recruits' creed is one sung chorus take (Eleven Music), and Jensen's orders are a voice clone (Fish Audio). There are two cuts:
+AI engineers on X are the recruits and Jensen Huang is the drill instructor. Every line is rewritten to fit the original's timing, then performed again: the recruits' creed is one sung chorus take (Eleven Music), and Jensen's orders are a voice clone (Fish Audio). Every shot is remade with the cast, so none of the film's footage is used: Nano Banana Pro keyframes, H3 Max animation with each speaker's lines pinned to his mouth, and lip sync passes where a mouth needed more (Fal Sync-3, H3 Lip Sync). The title card, word-timed captions and end credits are rendered locally in [HyperFrames](https://hyperframes.heygen.com).
 
-- **Lip sync:** the film's own footage, with every mouth re-synced to the new lines (Fal Sync-3).
-- **Fully generative:** every shot remade with the cast (Nano Banana Pro keyframes, H3 Max animation), with a title card, word-timed captions and end credits rendered locally in [HyperFrames](https://hyperframes.heygen.com).
-
-Status: both cuts are rendered. The lip sync cut runs 68.6 s; the fully generative cut runs 76.1 s, including captions and credits. Built with Claude Code (Opus 5.5).
+Status: rendered, 76.1 s including captions and credits. Built with Claude Code (Opus 5.5).
 
 ## License
 
