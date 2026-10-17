@@ -1,0 +1,42 @@
+.DS_Store
+.env
+.env.local
+
+# environments
+/.venv
+__pycache__/
+*.pyc
+/.claude/settings.local.json
+# project skills installed by HyperFrames (`npx hyperframes skills update` reinstalls them)
+/.claude/skills
+# copyrighted source footage, audio and transcripts (never committed)
+/media
+/reference
+/transcript
+# derived outputs (regenerable)
+/frames
+/review/dist
+/renders
+/.cache
+# HyperFrames projects (captions/, promo/*): dependencies, renders, Studio caches, review frames
+node_modules/
+.hyperframes/
+.thumbnails/
+.waveform-cache/
+/captions/renders
+/captions/assets
+/promo/*/renders
+/promo/.review
+# safety net: audio and video by extension (use `git add -f` for a deliberate exception)
+*.mp3
+*.wav
+*.flac
+*.m4a
+*.aac
+*.ogg
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.gif
+*.exr

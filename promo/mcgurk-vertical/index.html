@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>McGurk effect demo (vertical)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "JetBrains Mono";
+        src: url("assets/fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "JetBrains Mono";
+        src: url("assets/fonts/jetbrains-mono-latin-400-italic.woff2") format("woff2");
+        font-weight: 400;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: "JetBrains Mono";
+        src: url("assets/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        font-family: "JetBrains Mono", monospace;
+        color: #f4f4f5;
+      }
+      video.clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* Phone safe area: the Shorts / Reels / TikTok UI covers roughly the top 240px, the bottom 660px and a column of
+         buttons on the right, so every text block sits inside x 100-900, y 260-1360. */
+      .card {
+        position: absolute;
+        inset: 0;
+        background: #000;
+      }
+      .card-body {
+        position: absolute;
+        top: 260px;
+        bottom: 560px;
+        left: 100px;
+        right: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+      }
+      /* typed text: laid out in full from the start (hidden), so wrapped lines never move while it types */
+      .line,
+      .para {
+        position: relative;
+        display: block;
+        white-space: pre-wrap;
+        font-variant-ligatures: none;
+        font-feature-settings: "calt" 0, "liga" 0;
+      }
+      .line {
+        max-width: 100%;
+        font-size: 60px;
+        line-height: 1.3;
+      }
+      .line.small {
+        font-size: 46px;
+        font-style: italic;
+        color: #a1a1aa;
+        text-align: center;
+      }
+      .para {
+        width: 100%;
+        font-size: 50px;
+        line-height: 1.38;
+      }
+      .ch2 {
+        visibility: hidden;
+      }
+      .b {
+        font-weight: 700;
+      }
+      .q {
+        color: #ff7b72;
+      }
+      .prompt {
+        color: #71717a;
+      }
+      .mark {
+        display: none;
+        position: relative;
+      }
+      .mark::after {
+        content: "";
+        position: absolute;
+        left: 0.04em;
+        top: 0.1em;
+        width: 0.55em;
+        height: 1.08em;
+        background: #f4f4f5;
+      }
+      /* captions over the clips: on the chest, just above the platform caption area */
+      .cap {
+        position: absolute;
+        top: 1254px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+      }
+      .cap-box {
+        display: block;
+        padding: 18px 32px;
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.76);
+        font-size: 54px;
+        white-space: pre;
+      }
+      .op {
+        color: #a1a1aa;
+      }
+      .ok {
+        color: #7ee787;
+      }
+      .bad {
+        color: #ff7b72;
+      }
+      .dim {
+        color: #d4d4d8;
+      }
+      /* rewind overlay */
+      .rew {
+        position: absolute;
+        inset: 0;
+      }
+      .rew-tint {
+        position: absolute;
+        inset: 0;
+        background:
+          repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.28) 0 2px, rgba(0, 0, 0, 0) 2px 5px),
+          rgba(20, 30, 60, 0.18);
+      }
+      .rew-badge {
+        position: absolute;
+        top: 270px;
+        left: 100px;
+        display: block;
+        font-size: 56px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="49.367" data-width="1080" data-height="1920">
+      <!-- 1. the fixed clip, uncaptioned: frame 0 is its first frame -->
+      <video id="v-after-1" class="clip" src="assets/after.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="0" data-duration="2.2" data-track-index="0"></video>
+
+      <!-- 2. card -->
+      <section id="card-a" class="card clip" data-start="2.2" data-duration="1.85" data-track-index="0">
+        <div class="card-body"><div class="line" data-text='Same exact audio...'></div></div>
+      </section>
+
+      <!-- 3. the McGurk clip, uncaptioned -->
+      <video id="v-before-1" class="clip" src="assets/before.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="4.05" data-duration="2.2" data-track-index="0"></video>
+
+      <!-- 4. card: the question, then the promise -->
+      <section id="card-b" class="card clip" data-start="6.25" data-duration="4.5" data-track-index="0">
+        <div class="card-body">
+          <div class="line" data-text='Did you hear "Pront" in the second one?'></div>
+          <div class="line small" data-text="it's the exact same audio,&#10;I promise!"></div>
+        </div>
+      </section>
+
+      <!-- 5. pair 2, captioned with the word each one sounds like -->
+      <video id="v-after-2" class="clip" src="assets/after.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="10.75" data-duration="2.2" data-track-index="0"></video>
+      <video id="v-before-2" class="clip" src="assets/before.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="12.95" data-duration="2.2" data-track-index="0"></video>
+      <div id="cap-after-2" class="cap clip" data-start="10.75" data-duration="2.2" data-track-index="1">
+        <span class="cap-box"><span class="dim">original</span> <span class="op">=&gt;</span> <span class="ok">"Prompt"</span></span>
+      </div>
+      <div id="cap-before-2" class="cap clip" data-start="12.95" data-duration="2.2" data-track-index="1">
+        <span class="cap-box"><span class="dim">same audio</span> <span class="op">=&gt;</span> <span class="bad">"Pront"</span></span>
+      </div>
+
+      <!-- 6. card C: what just happened -->
+      <section id="card-c" class="card clip" data-start="15.15" data-duration="8.25" data-track-index="0">
+        <div class="card-body"><div class="para" data-text="Wait, wtf is going on?&#10;&#10;Both shots have the exact same audio; only the lip sync changes.&#10;&#10;This is an example of the **McGurk effect**.&#10;&#10;Let&#x27;s listen again..."></div></div>
+      </section>
+
+      <!-- 7. listen again: pair 3, rewind, pair 4, rewind, pair 5; only the original is labelled, with no word, so nothing biases the listener -->
+      <video id="v-after-3" class="clip" src="assets/after.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="23.4" data-duration="2.2" data-track-index="0"></video>
+      <video id="v-before-3" class="clip" src="assets/before.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="25.6" data-duration="2.2" data-track-index="0"></video>
+      <div id="cap-after-3" class="cap clip" data-start="23.4" data-duration="2.2" data-track-index="1">
+        <span class="cap-box"><span class="dim">original</span></span>
+      </div>
+      <video id="v-rewind-2" class="clip" src="assets/rewind.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="27.8" data-duration="0.7" data-track-index="0"></video>
+      <div id="rew-2" class="rew clip" data-start="27.8" data-duration="0.7" data-track-index="1">
+        <div class="rew-tint"></div>
+        <span class="rew-badge">◀◀ REWIND</span>
+      </div>
+      <video id="v-after-4" class="clip" src="assets/after.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="28.5" data-duration="2.2" data-track-index="0"></video>
+      <video id="v-before-4" class="clip" src="assets/before.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="30.7" data-duration="2.2" data-track-index="0"></video>
+      <div id="cap-after-4" class="cap clip" data-start="28.5" data-duration="2.2" data-track-index="1">
+        <span class="cap-box"><span class="dim">original</span></span>
+      </div>
+      <video id="v-rewind-3" class="clip" src="assets/rewind.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="32.9" data-duration="0.7" data-track-index="0"></video>
+      <div id="rew-3" class="rew clip" data-start="32.9" data-duration="0.7" data-track-index="1">
+        <div class="rew-tint"></div>
+        <span class="rew-badge">◀◀ REWIND</span>
+      </div>
+      <video id="v-after-5" class="clip" src="assets/after.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="33.6" data-duration="2.2" data-track-index="0"></video>
+      <video id="v-before-5" class="clip" src="assets/before.mp4" playsinline data-has-audio="true" data-volume="1"
+        data-start="35.8" data-duration="2.2" data-track-index="0"></video>
+      <div id="cap-after-5" class="cap clip" data-start="33.6" data-duration="2.2" data-track-index="1">
+        <span class="cap-box"><span class="dim">original</span></span>
+      </div>
+
+      <!-- 8. card D: the recap -->
+      <section id="card-d" class="card clip" data-start="38" data-duration="11.367" data-track-index="0">
+        <div class="card-body"><div class="para" data-text="**The McGurk effect**: what you see changes what you hear.&#10;&#10;If a generated mouth never closes for P, B or M, viewers hear a different word, even over perfect audio.&#10;&#10;When you lip-sync AI video, check the closures, not just the timing."></div></div>
+      </section>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const CPS = 26; // typing speed of the short lines (cards A and B), characters per second
+      const CPS_PARA = 30, PARA_PAUSE = 0.45, LEAD = 0.2; // the paragraph cards (C and D)
+
+      // Lay the text out in full, each character hidden, with a zero-width caret mark before the first character and
+      // after each one; the caret is whichever mark is showing. Lines wrap where they will end up, so nothing reflows.
+      // **bold** is bold, and a quoted word ("Pront", misspelled on purpose) is in the McGurk caption's red.
+      function build(el) {
+        const text = el.dataset.text;
+        el.textContent = "";
+        const add = (cls, txt) => {
+          const s = document.createElement("span");
+          s.className = cls;
+          s.textContent = txt;
+          el.appendChild(s);
+          return s;
+        };
+        if (!el.classList.contains("small")) add("prompt", "> ");
+        const first = add("mark", "");
+        const steps = [];
+        let bold = false;
+        let quoted = false;
+        for (let i = 0; i < text.length; i++) {
+          if (text.startsWith("**", i)) {
+            bold = !bold;
+            i++;
+            continue;
+          }
+          const c = text[i];
+          if (c === '"') quoted = !quoted;
+          const cls = ["ch2"];
+          if (bold) cls.push("b");
+          if (quoted || c === '"') cls.push("q");
+          steps.push({ c, ch: add(cls.join(" "), c), mark: add("mark", "") });
+        }
+        return { first, steps };
+      }
+
+      const blink = (mark, from, to, on) => {
+        const n = Math.max(0, Math.floor((to - from) / 0.5));
+        for (let i = 0; i < n; i++) tl.set(mark, { display: (i % 2 === 0) === on ? "inline" : "none" }, from + i * 0.5);
+      };
+
+      // Type `el` from `at`. The caret blinks from `waitFrom` until typing starts, follows the text while it types,
+      // then blinks (starting `blinkOn`) until `hideAt`, when it goes away, or to the end of the card.
+      function type(el, { at, cps, pause = 0, waitFrom = null, hideAt = null, blinkOn = true }) {
+        const { first, steps } = build(el);
+        if (waitFrom !== null) blink(first, waitFrom, at, true);
+        let cur = first;
+        let t = at;
+        let prev = "";
+        for (const { c, ch, mark } of steps) {
+          tl.set(ch, { visibility: "visible" }, t);
+          tl.set(cur, { display: "none" }, t);
+          tl.set(mark, { display: "inline" }, t);
+          cur = mark;
+          t += 1 / cps;
+          if (pause && c === "\n" && prev === "\n") t += pause;
+          prev = c;
+        }
+        const card = el.closest(".card");
+        const end = hideAt ?? parseFloat(card.dataset.start) + parseFloat(card.dataset.duration);
+        blink(cur, t + 0.25, end, blinkOn);
+        if (hideAt !== null) tl.set(cur, { display: "none" }, hideAt);
+        return t;
+      }
+
+      // cards A and B type from their own start and hold to their own end (same timing as the wide cut)
+      const span = (id) => {
+        const el = document.getElementById(id);
+        const start = parseFloat(el.dataset.start);
+        return [start, start + parseFloat(el.dataset.duration)];
+      };
+      const [aStart, aEnd] = span("card-a");
+      type(document.querySelector("#card-a .line"), { at: aStart + 0.15, cps: CPS, waitFrom: aStart, hideAt: aEnd });
+
+      const [bStart, bEnd] = span("card-b");
+      const [lineQ, lineP] = document.querySelectorAll("#card-b .line");
+      const pStart = bStart + 0.2 + [...lineQ.dataset.text].length / CPS + 0.6; // the question's caret holds until the promise starts
+      type(lineQ, { at: bStart + 0.2, cps: CPS, waitFrom: bStart, hideAt: pStart });
+      type(lineP, { at: pStart, cps: CPS, waitFrom: pStart, hideAt: bEnd });
+
+      // paragraph cards: type in place from just after the card starts; the caret blinks once the text is done
+      document.querySelectorAll(".para").forEach((para) => {
+        const start = parseFloat(para.closest(".card").dataset.start);
+        type(para, { at: start + LEAD, cps: CPS_PARA, pause: PARA_PAUSE, blinkOn: false });
+      });
+
+      // captions rise in at the start of each captioned clip
+      document.querySelectorAll(".cap").forEach((cap) => {
+        const start = parseFloat(cap.dataset.start);
+        tl.fromTo(cap.querySelector(".cap-box"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }, start + 0.05);
+      });
+
+      // rewind badge blinks
+      document.querySelectorAll(".rew").forEach((rew) => {
+        const start = parseFloat(rew.dataset.start);
+        const badge = rew.querySelector(".rew-badge");
+        for (let i = 0; i < 3; i++) tl.set(badge, { opacity: i % 2 === 0 ? 1 : 0.25 }, start + i * 0.24);
+      });
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

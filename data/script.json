@@ -1,0 +1,639 @@
+{
+  "$comment": "Master timeline for the meme. Times are seconds in media/source.mp4 (29.97 fps); subtract window.start for meme time. Original lines are referenced by id + paraphrased gist only; Whisper's transcript stays in /transcript. origSyl and onsets come from scripts/prep.py (Whisper large-v3-turbo word timestamps on the vocal stem); DI barks (D02-D07, R01, F01) are timed from the vocal-stem energy envelope.",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=nkGIxGdZoYY",
+    "title": "This Is My Rifle Scene Full Metal Jacket PG Version",
+    "fps": 29.97,
+    "size": [
+      1920,
+      1080
+    ],
+    "duration": 106.51
+  },
+  "window": {
+    "start": 39.34,
+    "end": 106.41,
+    "note": "opens on the DI's cue shot so Jensen and the poster gag land first; 67.1 s. Starting at the first recruit shot (41.54) gives 64.9 s."
+  },
+  "review": {
+    "version": 9,
+    "note": "Bump when a review round's changes land; feedback drafts on the storyboard are kept per version.",
+    "timing": 7
+  },
+  "cast": {
+    "jensen": {
+      "name": "Jensen Huang",
+      "x": "JensenHuang",
+      "role": "Drill instructor",
+      "why": "Coined 'AI factories'; leather jacket replaces the uniform; parting order is 'We need more GPUs!'"
+    },
+    "poteto": {
+      "name": "lauren (poteto)",
+      "x": "poteto",
+      "role": "Cameo as her avatar on the office poster (S07): PRIDE becomes PRs",
+      "why": "Your most-liked of the cast; her 'more ambitious' push is in the chant"
+    },
+    "mattpocockuk": {
+      "name": "Matt Pocock",
+      "x": "mattpocockuk",
+      "role": "Recruit in wire-rim glasses (S08 hook shot, S10 close-up)",
+      "why": "Near look-alike for the actor (balding, round wire-rims); delivers the hook and the first hero close-up; /grill and 'lock down your agents' lines are his"
+    },
+    "steipete": {
+      "name": "Peter Steinberger",
+      "x": "steipete",
+      "role": "Recruit in dark-framed glasses (S09 wide, S13 wide)",
+      "why": "Most-mentioned of the cast in your last 12 months; wears similar dark frames; OpenClaw lobster plush on the bunk"
+    },
+    "swyx": {
+      "name": "swyx",
+      "x": "swyx",
+      "role": "Heavyset recruit close-up (S11)",
+      "why": "Your longest-running tie of the cast (215 mentions all-time); coined 'AI Engineer' and chants it. Whoever plays this recruit inherits the character's notoriety in the film; worth a quick OK"
+    },
+    "simonw": {
+      "name": "Simon Willison",
+      "x": "simonw",
+      "role": "Fire watch in the helmet (S12, S14, S15), gets the last line",
+      "why": "Small face, so an easy swap; the deadpan closer suits him. Bench: theo or swyx"
+    }
+  },
+  "shots": [
+    {
+      "id": "S07",
+      "start": 39.34,
+      "end": 41.54,
+      "framing": "MCU, frontal, standing",
+      "subject": "DI in his office",
+      "cast": [
+        "jensen",
+        "poteto"
+      ],
+      "swap": "easy",
+      "notes": "Wall poster reading PRIDE (cartoon Marine head) becomes 'PRs' with poteto's avatar; planar track."
+    },
+    {
+      "id": "S08",
+      "start": 41.54,
+      "end": 52.15,
+      "framing": "Medium wide, locked off",
+      "subject": "Recruit in wire-rim glasses lying on a lower bunk in profile, rifle upright; aisle of bunks behind (same character as S10)",
+      "cast": [
+        "mattpocockuk"
+      ],
+      "swap": "hard (profile, small head)",
+      "notes": "The hook plays here. No lip sync needed if the line keeps the rhythm."
+    },
+    {
+      "id": "S09",
+      "start": 52.15,
+      "end": 62.33,
+      "framing": "Wide reverse, locked off",
+      "subject": "Recruit in dark-framed glasses in the foreground, head frame-left",
+      "cast": [
+        "steipete"
+      ],
+      "swap": "medium",
+      "notes": "Chorus only; swap the foreground face, leave the background recruits alone. A lobster plush on the bunk sells the steipete gag."
+    },
+    {
+      "id": "S10",
+      "start": 62.33,
+      "end": 73.44,
+      "framing": "Close-up, low angle, 3/4 profile looking up",
+      "subject": "Recruit in wire-rim glasses (same as S08), rifle held overhead",
+      "cast": [
+        "mattpocockuk"
+      ],
+      "swap": "medium (glasses help)",
+      "notes": "Hero lip sync #1. Matt's voice sits forward in the chorus."
+    },
+    {
+      "id": "S11",
+      "start": 73.44,
+      "end": 86.72,
+      "framing": "Close-up, 3/4 frontal, lying back",
+      "subject": "Heavyset recruit, rifle diagonal; another recruit in the background bunk",
+      "cast": [
+        "swyx"
+      ],
+      "swap": "easiest close-up (big, well lit, near frontal)",
+      "notes": "Hero lip sync #2. swyx's voice forward in the chorus."
+    },
+    {
+      "id": "S12",
+      "start": 86.72,
+      "end": 93.83,
+      "framing": "Medium, DI walks in from the left to centre",
+      "subject": "DI in the hallway; fire watch in a chrome helmet at attention behind",
+      "cast": [
+        "jensen",
+        "simonw"
+      ],
+      "swap": "medium (walking, then square to camera)",
+      "notes": "The DIVINE WORSHIP board becomes MODEL WORSHIP; the framed portrait becomes Jensen."
+    },
+    {
+      "id": "S13",
+      "start": 93.83,
+      "end": 96.46,
+      "framing": "Wide",
+      "subject": "Same angle as S09; recruits snap their rifles down on command",
+      "cast": [
+        "steipete"
+      ],
+      "swap": "skip or light",
+      "notes": "Reacts to the 'Push!' bark."
+    },
+    {
+      "id": "S14",
+      "start": 96.46,
+      "end": 98.5,
+      "framing": "Medium",
+      "subject": "DI in the hallway, one more bark",
+      "cast": [
+        "jensen",
+        "simonw"
+      ],
+      "swap": "medium",
+      "notes": ""
+    },
+    {
+      "id": "S15",
+      "start": 98.5,
+      "end": 106.41,
+      "framing": "Medium, lights out, blue night light",
+      "subject": "DI silhouetted in the doorway, then walks off down the hall; fire watch at attention",
+      "cast": [
+        "jensen",
+        "simonw"
+      ],
+      "swap": "light (silhouette; leather jacket matters more than the face)",
+      "notes": "Optional hybrid ending: the dark barracks glows with laptop screens still running. The clip ends 0.07 s after the last word, so add a 1-2 s tail (hold or end card)."
+    }
+  ],
+  "lines": [
+    {
+      "id": "D01",
+      "shot": "S07",
+      "voice": "jensen",
+      "start": 40.65,
+      "end": 41.05,
+      "origSyl": 1,
+      "gist": "DI orders the prayer to begin",
+      "parody": "Prompt!",
+      "syl": 1,
+      "ref": "The creed is the prompt"
+    },
+    {
+      "id": "C01",
+      "shot": "S08",
+      "voice": "chorus",
+      "start": 42.24,
+      "end": 43.76,
+      "origSyl": 5,
+      "onsets": [
+        0,
+        0.2,
+        0.72,
+        1.0
+      ],
+      "gist": "Names the rifle as theirs",
+      "parody": "This is my software factory.",
+      "syl": 8,
+      "ref": "The meme. Three syllables over: start it ~0.1 s early and use the 0.4 s gap before C02"
+    },
+    {
+      "id": "C02",
+      "shot": "S08",
+      "voice": "chorus",
+      "start": 44.18,
+      "end": 47.14,
+      "origSyl": 11,
+      "onsets": [
+        0,
+        0.6,
+        0.8,
+        1.06,
+        1.4,
+        1.74,
+        1.84,
+        2.12,
+        2.36,
+        2.54
+      ],
+      "gist": "The famous hook",
+      "parody": "There are many like it, but this one is mine.",
+      "syl": 11,
+      "ref": "Kept: it is the meme"
+    },
+    {
+      "id": "C03",
+      "shot": "S08",
+      "voice": "chorus",
+      "start": 48.02,
+      "end": 49.94,
+      "origSyl": 7,
+      "onsets": [
+        0,
+        0.28,
+        0.72,
+        0.98,
+        1.18,
+        1.54
+      ],
+      "gist": "The rifle as best friend",
+      "parody": "My agent is my best friend.",
+      "syl": 7,
+      "ref": "Agent for rifle"
+    },
+    {
+      "id": "C04",
+      "shot": "S08",
+      "voice": "chorus",
+      "start": 50.5,
+      "end": 51.8,
+      "origSyl": 4,
+      "onsets": [
+        0,
+        0.48,
+        0.66,
+        0.88
+      ],
+      "gist": "The rifle as their life",
+      "parody": "AI is my life.",
+      "syl": 5,
+      "ref": ""
+    },
+    {
+      "id": "C05",
+      "shot": "S09",
+      "voice": "chorus",
+      "start": 52.24,
+      "end": 55.72,
+      "origSyl": 12,
+      "onsets": [
+        0,
+        0.6,
+        0.92,
+        1.44,
+        1.7,
+        1.98,
+        2.1,
+        2.34,
+        2.76,
+        3.02
+      ],
+      "gist": "Vows to master it",
+      "parody": "I must master AI as I must master my life.",
+      "syl": 13,
+      "ref": ""
+    },
+    {
+      "id": "C06",
+      "shot": "S09",
+      "voice": "chorus",
+      "start": 56.44,
+      "end": 59.0,
+      "origSyl": 10,
+      "onsets": [
+        0,
+        0.7,
+        1.18,
+        1.44,
+        1.88,
+        2.14
+      ],
+      "gist": "Rifle is useless without the recruit",
+      "parody": "Without me, my agents are useless.",
+      "syl": 9,
+      "ref": "The chiasmus, agents for rifle"
+    },
+    {
+      "id": "C07",
+      "shot": "S09",
+      "voice": "chorus",
+      "start": 59.0,
+      "end": 62.14,
+      "origSyl": 10,
+      "onsets": [
+        0,
+        1.1,
+        1.56,
+        2.4,
+        2.5,
+        2.76
+      ],
+      "gist": "Recruit is useless without the rifle",
+      "parody": "Without my agents, I am useless.",
+      "syl": 9,
+      "ref": ""
+    },
+    {
+      "id": "C08",
+      "shot": "S10",
+      "voice": "chorus+mattpocockuk",
+      "start": 62.58,
+      "end": 64.84,
+      "origSyl": 7,
+      "onsets": [
+        0,
+        0.5,
+        0.8,
+        1.18,
+        1.46,
+        1.88
+      ],
+      "gist": "Must fire true",
+      "parody": "I must grill my agents first.",
+      "syl": 7,
+      "ref": "Matt's /grill skill"
+    },
+    {
+      "id": "C09",
+      "shot": "S10",
+      "voice": "chorus+mattpocockuk",
+      "start": 65.4,
+      "end": 69.14,
+      "origSyl": 16,
+      "onsets": [
+        0,
+        0.4,
+        0.74,
+        1.06,
+        1.6,
+        1.76,
+        1.98,
+        2.3,
+        2.54,
+        2.72,
+        3.0,
+        3.2,
+        3.48
+      ],
+      "gist": "Must outshoot the enemy",
+      "parody": "I must burn more tokens than my weekly usage limit allows.",
+      "syl": 16,
+      "ref": "Weekly usage limits"
+    },
+    {
+      "id": "C10",
+      "shot": "S10",
+      "voice": "chorus+mattpocockuk",
+      "start": 69.44,
+      "end": 72.14,
+      "origSyl": 9,
+      "onsets": [
+        0,
+        0.42,
+        0.68,
+        1.0,
+        1.36,
+        1.76,
+        2.02,
+        2.36
+      ],
+      "gist": "Shoot first",
+      "parody": "I must ship before the next model drops.",
+      "syl": 10,
+      "ref": "Model release cadence"
+    },
+    {
+      "id": "C11",
+      "shot": "S10",
+      "voice": "chorus+mattpocockuk",
+      "start": 72.5,
+      "end": 73.3,
+      "origSyl": 2,
+      "onsets": [
+        0,
+        0.4
+      ],
+      "gist": "Two-word affirmation",
+      "parody": "Ship it!",
+      "syl": 2,
+      "ref": ""
+    },
+    {
+      "id": "C12",
+      "shot": "S11",
+      "voice": "chorus+swyx",
+      "start": 74.02,
+      "end": 76.28,
+      "origSyl": 8,
+      "onsets": [
+        0,
+        0.68,
+        1.28,
+        1.34,
+        1.7,
+        1.9,
+        1.96
+      ],
+      "gist": "Swears the oath",
+      "parody": "I swear on my AGENTS.md.",
+      "syl": 9,
+      "ref": "Claude Code reads AGENTS.md now (trq212, Sep 18)"
+    },
+    {
+      "id": "C13",
+      "shot": "S11",
+      "voice": "chorus+swyx",
+      "start": 76.76,
+      "end": 80.02,
+      "origSyl": 14,
+      "onsets": [
+        0,
+        0.52,
+        0.96,
+        1.18,
+        1.66,
+        1.92,
+        2.38,
+        2.64,
+        2.84
+      ],
+      "gist": "Rifle and recruit defend the country",
+      "parody": "My agents will ship more code than I can possibly review.",
+      "syl": 15,
+      "ref": "Review is the new bottleneck (rauchg, Sep 8)"
+    },
+    {
+      "id": "C14",
+      "shot": "S11",
+      "voice": "chorus+swyx",
+      "start": 80.48,
+      "end": 82.46,
+      "origSyl": 10,
+      "onsets": [
+        0,
+        0.42,
+        0.64,
+        0.8,
+        1.22,
+        1.5,
+        1.64
+      ],
+      "gist": "Masters of the enemy",
+      "parody": "We are the A-I engineers now.",
+      "syl": 9,
+      "ref": "swyx coined 'AI Engineer'"
+    },
+    {
+      "id": "C15",
+      "shot": "S11",
+      "voice": "chorus+swyx",
+      "start": 82.78,
+      "end": 84.9,
+      "origSyl": 8,
+      "onsets": [
+        0,
+        0.48,
+        0.7,
+        0.86,
+        1.32,
+        1.52,
+        1.7
+      ],
+      "gist": "Saviors of their lives",
+      "parody": "We will be more ambitious.",
+      "syl": 7,
+      "ref": "trq212 and poteto, Oct 8"
+    },
+    {
+      "id": "C16",
+      "shot": "S11>S12",
+      "voice": "chorus",
+      "start": 85.36,
+      "end": 88.22,
+      "origSyl": 11,
+      "onsets": [
+        0,
+        0.48,
+        0.76,
+        1.02,
+        1.7,
+        2.04,
+        2.26,
+        2.48
+      ],
+      "gist": "Until there is no enemy",
+      "parody": "Trust in our agents, till A-S-I comes.",
+      "syl": 10,
+      "ref": "ASI"
+    },
+    {
+      "id": "C17",
+      "shot": "S12",
+      "voice": "chorus",
+      "start": 88.22,
+      "end": 90.22,
+      "origSyl": 4,
+      "onsets": [
+        0,
+        0.62,
+        1.86
+      ],
+      "gist": "Peace, amen",
+      "parody": "Tests are green. Amen.",
+      "syl": 5,
+      "ref": "CI passing; ends on the held note"
+    },
+    {
+      "id": "D02",
+      "shot": "S12",
+      "voice": "jensen",
+      "start": 91.75,
+      "end": 92.15,
+      "origSyl": 2,
+      "gist": "Drill bark 1",
+      "parody": "Ready!",
+      "syl": 2,
+      "ref": "git as close-order drill"
+    },
+    {
+      "id": "D03",
+      "shot": "S12",
+      "voice": "jensen",
+      "start": 92.5,
+      "end": 93.0,
+      "origSyl": 2,
+      "gist": "Drill bark 2",
+      "parody": "Commit!",
+      "syl": 2,
+      "ref": ""
+    },
+    {
+      "id": "D04",
+      "shot": "S13",
+      "voice": "jensen",
+      "start": 93.9,
+      "end": 94.15,
+      "origSyl": 1,
+      "gist": "Drill bark 3 (off screen); rifles snap down",
+      "parody": "Push!",
+      "syl": 1,
+      "ref": ""
+    },
+    {
+      "id": "D05",
+      "shot": "S14",
+      "voice": "jensen",
+      "start": 97.45,
+      "end": 97.7,
+      "origSyl": 2,
+      "gist": "Stand-down bark",
+      "parody": "Auto-merge!",
+      "syl": 3,
+      "ref": "Caps the Ready/Commit/Push drill; lights cut on the next shot"
+    },
+    {
+      "id": "D06",
+      "shot": "S15",
+      "voice": "jensen",
+      "start": 99.9,
+      "end": 100.6,
+      "origSyl": 4,
+      "gist": "DI says good night",
+      "parody": "Close your laptops!",
+      "syl": 4,
+      "ref": "Sets up 'Still running, sir!'; also suits the laptop version"
+    },
+    {
+      "id": "R01",
+      "shot": "S15",
+      "voice": "chorus",
+      "start": 101.65,
+      "end": 102.45,
+      "origSyl": 3,
+      "gist": "Recruits answer in unison",
+      "parody": "Still running, sir!",
+      "syl": 4,
+      "ref": "The agents never sleep"
+    },
+    {
+      "id": "D07",
+      "shot": "S15",
+      "voice": "jensen",
+      "start": 104.0,
+      "end": 105.0,
+      "origSyl": 4,
+      "gist": "Parting jab as he walks off",
+      "parody": "We need more GPUs!",
+      "syl": 6,
+      "ref": "Jensen's whole business model, barked over his shoulder as he walks off; back to camera, so it may start early. Alts: 'Who wrote this code?' / 'Context is full.' / 'Go to sleep.'"
+    },
+    {
+      "id": "F01",
+      "shot": "S15",
+      "voice": "simonw",
+      "start": 105.32,
+      "end": 106.34,
+      "origSyl": 4,
+      "gist": "Fire watch's reply",
+      "parody": "You're absolutely right, sir!",
+      "syl": 7,
+      "ref": "The most-memed agent reply, from the man on watch. 7 syllables: let the end hold run ~0.5 s past the clip. Alts, in order: 'Claude did, sir!' / 'Compacting, sir!' / 'Five more prompts, sir!'"
+    }
+  ]
+}

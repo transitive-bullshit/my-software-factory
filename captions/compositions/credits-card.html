@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #000;
+          color: #f2f0ea;
+          font-family: "Inter", sans-serif;
+        }
+        .card { display: flex; flex-direction: column; align-items: center; gap: 64px; }
+        .sec { display: flex; flex-direction: column; align-items: center; gap: 26px; }
+        .label { font-size: 21px; letter-spacing: 0.34em; text-transform: uppercase; color: #8f8b82; }
+        .by { display: flex; align-items: center; gap: 28px; }
+        .by img { width: 128px; height: 128px; }
+        .by span { font-size: 50px; font-weight: 600; letter-spacing: 0.01em; }
+        .cast { display: flex; gap: 44px; }
+        .person { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+        .person img { width: 144px; height: 144px; }
+        .person span { font-size: 25px; color: #d8d4cb; }
+        .tools { margin-top: 80px; font-size: 24px; color: #77746d; letter-spacing: 0.08em; }
+        /* a hairline ring of warm light, brighter where it catches the light, set off from the picture by a thin black gap */
+        .ring {
+          padding: 1.5px;
+          border-radius: 50%;
+          background: linear-gradient(155deg, rgba(246, 232, 204, 0.62), rgba(246, 232, 204, 0.16) 48%, rgba(246, 232, 204, 0.08) 62%, rgba(246, 232, 204, 0.34));
+        }
+        .gap { padding: 5px; border-radius: 50%; background: #000; }
+        .ring img { display: block; border-radius: 50%; object-fit: cover; }
+      </style>
+      <div id="root" data-composition-id="credits-card" data-width="1920" data-height="1080">
+        <div class="card">
+          <div class="sec rise" data-at="0.35">
+            <div class="label">Created by</div>
+            <div class="by">
+              <div class="ring"><div class="gap"><img src="assets/avatars/transitive_bs.png" alt="" /></div></div>
+              <span>@transitive_bs</span>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="label rise" data-at="1.15">Featuring</div>
+            <div class="cast">
+              <div class="person rise" data-at="1.35"><div class="ring"><div class="gap"><img src="assets/avatars/JensenHuang.png" alt="" /></div></div><span>@JensenHuang</span></div>
+              <div class="person rise" data-at="1.47"><div class="ring"><div class="gap"><img src="assets/avatars/mattpocockuk.png" alt="" /></div></div><span>@mattpocockuk</span></div>
+              <div class="person rise" data-at="1.59"><div class="ring"><div class="gap"><img src="assets/avatars/steipete.png" alt="" /></div></div><span>@steipete</span></div>
+              <div class="person rise" data-at="1.71"><div class="ring"><div class="gap"><img src="assets/avatars/swyx.png" alt="" /></div></div><span>@swyx</span></div>
+              <div class="person rise" data-at="1.83"><div class="ring"><div class="gap"><img src="assets/avatars/simonw.png" alt="" /></div></div><span>@simonw</span></div>
+              <div class="person rise" data-at="1.95"><div class="ring"><div class="gap"><img src="assets/avatars/poteto.png" alt="" /></div></div><span>@poteto</span></div>
+            </div>
+          </div>
+          <div class="tools rise" data-at="2.4">Made with Opus 5.5 · H3 Max · Fal Sync-3 · ElevenLabs · Fish Audio</div>
+        </div>
+      </div>
+      <script>
+        // the card drifts in very slowly the whole time; each part rises in at its data-at second
+        const scope = '[data-composition-id="credits-card"]';
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo(scope + " .card", { scale: 1 }, { scale: 1.03, duration: 10.5, ease: "none" }, 0);
+        document.querySelectorAll(scope + " .rise").forEach((el) => {
+          tl.fromTo(el, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, Number(el.dataset.at));
+        });
+        window.__timelines["credits-card"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

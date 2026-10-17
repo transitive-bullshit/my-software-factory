@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <!-- The end credits card of the generative cut: `npm run credits` renders it to ../renders/full/credits.mp4,
+         which scripts/full.py crossfades onto the end of the cut. Pictures come from scripts/credits.py. -->
+    <div id="root" data-composition-id="credits" data-start="0" data-duration="10.5" data-width="1920" data-height="1080" data-fps="30000/1001">
+      <div
+        id="credits-card"
+        data-composition-id="credits-card"
+        data-composition-src="compositions/credits-card.html"
+        data-start="0"
+        data-duration="10.5"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+    </div>
+    <script>
+      window.__timelines["credits"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

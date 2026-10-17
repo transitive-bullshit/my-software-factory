@@ -1,0 +1,895 @@
+{
+ "$comment": "Captions for renders/full/generative.mp4, times in seconds of that cut. Edit text or timings here, then `npm run captions` in captions/. Regenerated from the audio by scripts/captions.py.",
+ "video": "renders/full/generative.mp4",
+ "lines": [
+  {
+   "id": "D01",
+   "shot": "S07",
+   "speaker": "jensen",
+   "words": [
+    {
+     "text": "Prompt!",
+     "start": 0.46,
+     "end": 0.984
+    }
+   ],
+   "in": 0.34,
+   "out": 1.684
+  },
+  {
+   "id": "C01",
+   "shot": "S08",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "This",
+     "start": 2.805,
+     "end": 3.056
+    },
+    {
+     "text": "is",
+     "start": 3.056,
+     "end": 3.136
+    },
+    {
+     "text": "my",
+     "start": 3.136,
+     "end": 3.417
+    },
+    {
+     "text": "software",
+     "start": 3.417,
+     "end": 4.018
+    },
+    {
+     "text": "factory.",
+     "start": 4.018,
+     "end": 4.58
+    }
+   ],
+   "in": 2.685,
+   "out": 4.975
+  },
+  {
+   "id": "C02",
+   "shot": "S08",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "There",
+     "start": 5.135,
+     "end": 5.306
+    },
+    {
+     "text": "are",
+     "start": 5.306,
+     "end": 5.427
+    },
+    {
+     "text": "many",
+     "start": 5.427,
+     "end": 5.749
+    },
+    {
+     "text": "like",
+     "start": 5.749,
+     "end": 6.171
+    },
+    {
+     "text": "it,",
+     "start": 6.171,
+     "end": 6.231
+    },
+    {
+     "text": "but",
+     "start": 6.593,
+     "end": 6.754
+    },
+    {
+     "text": "this",
+     "start": 6.754,
+     "end": 7.056
+    },
+    {
+     "text": "one",
+     "start": 7.056,
+     "end": 7.197
+    },
+    {
+     "text": "is",
+     "start": 7.197,
+     "end": 7.317
+    },
+    {
+     "text": "mine.",
+     "start": 7.317,
+     "end": 7.7
+    }
+   ],
+   "in": 5.015,
+   "out": 8.08
+  },
+  {
+   "id": "C03",
+   "shot": "S08",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "My",
+     "start": 8.24,
+     "end": 8.572
+    },
+    {
+     "text": "agent",
+     "start": 8.572,
+     "end": 9.235
+    },
+    {
+     "text": "is",
+     "start": 9.235,
+     "end": 9.375
+    },
+    {
+     "text": "my",
+     "start": 9.375,
+     "end": 9.596
+    },
+    {
+     "text": "best",
+     "start": 9.596,
+     "end": 9.898
+    },
+    {
+     "text": "friend.",
+     "start": 9.898,
+     "end": 10.24
+    }
+   ],
+   "in": 8.12,
+   "out": 10.555
+  },
+  {
+   "id": "C04",
+   "shot": "S08",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "AI",
+     "start": 10.715,
+     "end": 11.513
+    },
+    {
+     "text": "is",
+     "start": 11.513,
+     "end": 11.674
+    },
+    {
+     "text": "my",
+     "start": 11.674,
+     "end": 11.835
+    },
+    {
+     "text": "life.",
+     "start": 11.835,
+     "end": 12.22
+    }
+   ],
+   "in": 10.595,
+   "out": 12.77
+  },
+  {
+   "id": "C05",
+   "shot": "S09",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "I",
+     "start": 12.93,
+     "end": 13.121
+    },
+    {
+     "text": "must",
+     "start": 13.121,
+     "end": 13.463
+    },
+    {
+     "text": "master",
+     "start": 13.463,
+     "end": 13.946
+    },
+    {
+     "text": "AI",
+     "start": 13.946,
+     "end": 14.65
+    },
+    {
+     "text": "as",
+     "start": 14.65,
+     "end": 14.892
+    },
+    {
+     "text": "I",
+     "start": 14.892,
+     "end": 14.952
+    },
+    {
+     "text": "must",
+     "start": 14.952,
+     "end": 15.254
+    },
+    {
+     "text": "master",
+     "start": 15.254,
+     "end": 15.616
+    },
+    {
+     "text": "my",
+     "start": 15.616,
+     "end": 15.837
+    },
+    {
+     "text": "life.",
+     "start": 15.837,
+     "end": 16.14
+    }
+   ],
+   "in": 12.81,
+   "out": 16.73
+  },
+  {
+   "id": "C06",
+   "shot": "S09",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "Without",
+     "start": 16.89,
+     "end": 17.425
+    },
+    {
+     "text": "me,",
+     "start": 17.425,
+     "end": 17.485
+    },
+    {
+     "text": "my",
+     "start": 17.889,
+     "end": 18.152
+    },
+    {
+     "text": "agents",
+     "start": 18.152,
+     "end": 18.515
+    },
+    {
+     "text": "are",
+     "start": 18.515,
+     "end": 18.717
+    },
+    {
+     "text": "useless.",
+     "start": 18.717,
+     "end": 18.98
+    }
+   ],
+   "in": 16.77,
+   "out": 19.54
+  },
+  {
+   "id": "C07",
+   "shot": "S09",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "Without",
+     "start": 19.7,
+     "end": 20.172
+    },
+    {
+     "text": "my",
+     "start": 20.172,
+     "end": 20.232
+    },
+    {
+     "text": "agents,",
+     "start": 20.232,
+     "end": 20.694
+    },
+    {
+     "text": "I",
+     "start": 20.694,
+     "end": 20.754
+    },
+    {
+     "text": "am",
+     "start": 21.116,
+     "end": 21.216
+    },
+    {
+     "text": "useless.",
+     "start": 21.216,
+     "end": 21.94
+    }
+   ],
+   "in": 19.58,
+   "out": 22.64
+  },
+  {
+   "id": "C08",
+   "shot": "S10",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "I",
+     "start": 23.295,
+     "end": 23.467
+    },
+    {
+     "text": "must",
+     "start": 23.467,
+     "end": 23.749
+    },
+    {
+     "text": "grill",
+     "start": 23.749,
+     "end": 24.012
+    },
+    {
+     "text": "my",
+     "start": 24.012,
+     "end": 24.234
+    },
+    {
+     "text": "agents",
+     "start": 24.234,
+     "end": 24.617
+    },
+    {
+     "text": "first.",
+     "start": 24.617,
+     "end": 24.86
+    }
+   ],
+   "in": 23.175,
+   "out": 25.55
+  },
+  {
+   "id": "C09",
+   "shot": "S10",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "I",
+     "start": 25.71,
+     "end": 25.821
+    },
+    {
+     "text": "must",
+     "start": 25.821,
+     "end": 26.103
+    },
+    {
+     "text": "burn",
+     "start": 26.103,
+     "end": 26.344
+    },
+    {
+     "text": "more",
+     "start": 26.344,
+     "end": 26.586
+    },
+    {
+     "text": "tokens",
+     "start": 26.586,
+     "end": 26.989
+    },
+    {
+     "text": "than",
+     "start": 26.989,
+     "end": 27.15
+    },
+    {
+     "text": "my",
+     "start": 27.15,
+     "end": 27.331
+    },
+    {
+     "text": "weekly",
+     "start": 27.331,
+     "end": 27.733
+    },
+    {
+     "text": "usage",
+     "start": 27.733,
+     "end": 28.035
+    },
+    {
+     "text": "limit",
+     "start": 28.035,
+     "end": 28.317
+    },
+    {
+     "text": "allows.",
+     "start": 28.317,
+     "end": 28.62
+    }
+   ],
+   "in": 25.59,
+   "out": 29.32
+  },
+  {
+   "id": "C10",
+   "shot": "S10",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "I",
+     "start": 29.695,
+     "end": 29.806
+    },
+    {
+     "text": "must",
+     "start": 29.806,
+     "end": 30.068
+    },
+    {
+     "text": "ship",
+     "start": 30.068,
+     "end": 30.33
+    },
+    {
+     "text": "before",
+     "start": 30.33,
+     "end": 30.672
+    },
+    {
+     "text": "the",
+     "start": 30.672,
+     "end": 30.773
+    },
+    {
+     "text": "next",
+     "start": 30.773,
+     "end": 31.034
+    },
+    {
+     "text": "model",
+     "start": 31.034,
+     "end": 31.337
+    },
+    {
+     "text": "drops.",
+     "start": 31.337,
+     "end": 31.72
+    }
+   ],
+   "in": 29.575,
+   "out": 32.4
+  },
+  {
+   "id": "C11",
+   "shot": "S10",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "Ship",
+     "start": 32.56,
+     "end": 32.653
+    },
+    {
+     "text": "it!",
+     "start": 32.653,
+     "end": 32.9
+    }
+   ],
+   "in": 32.44,
+   "out": 33.6
+  },
+  {
+   "id": "C12",
+   "shot": "S11",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "I",
+     "start": 34.77,
+     "end": 35.021
+    },
+    {
+     "text": "swear",
+     "start": 35.021,
+     "end": 35.323
+    },
+    {
+     "text": "on",
+     "start": 35.323,
+     "end": 35.444
+    },
+    {
+     "text": "my",
+     "start": 35.444,
+     "end": 35.685
+    },
+    {
+     "text": "AGENTS.md.",
+     "start": 35.685,
+     "end": 36.63
+    }
+   ],
+   "in": 34.65,
+   "out": 37.33
+  },
+  {
+   "id": "C13",
+   "shot": "S11",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "My",
+     "start": 37.515,
+     "end": 37.545
+    },
+    {
+     "text": "agents",
+     "start": 37.545,
+     "end": 38.066
+    },
+    {
+     "text": "will",
+     "start": 38.066,
+     "end": 38.206
+    },
+    {
+     "text": "ship",
+     "start": 38.206,
+     "end": 38.487
+    },
+    {
+     "text": "more",
+     "start": 38.487,
+     "end": 38.727
+    },
+    {
+     "text": "code",
+     "start": 38.727,
+     "end": 39.068
+    },
+    {
+     "text": "than",
+     "start": 39.068,
+     "end": 39.188
+    },
+    {
+     "text": "I",
+     "start": 39.188,
+     "end": 39.208
+    },
+    {
+     "text": "can",
+     "start": 39.208,
+     "end": 39.368
+    },
+    {
+     "text": "possibly",
+     "start": 39.368,
+     "end": 39.909
+    },
+    {
+     "text": "review.",
+     "start": 39.909,
+     "end": 40.17
+    }
+   ],
+   "in": 37.395,
+   "out": 40.775
+  },
+  {
+   "id": "C14",
+   "shot": "S11",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "We",
+     "start": 40.935,
+     "end": 40.955
+    },
+    {
+     "text": "are",
+     "start": 40.955,
+     "end": 41.128
+    },
+    {
+     "text": "the",
+     "start": 41.128,
+     "end": 41.514
+    },
+    {
+     "text": "AI",
+     "start": 41.514,
+     "end": 41.696
+    },
+    {
+     "text": "engineers",
+     "start": 41.696,
+     "end": 42.326
+    },
+    {
+     "text": "now.",
+     "start": 42.326,
+     "end": 42.51
+    }
+   ],
+   "in": 40.815,
+   "out": 43.07
+  },
+  {
+   "id": "C15",
+   "shot": "S11",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "We",
+     "start": 43.23,
+     "end": 43.26
+    },
+    {
+     "text": "will",
+     "start": 43.26,
+     "end": 43.442
+    },
+    {
+     "text": "be",
+     "start": 43.442,
+     "end": 43.623
+    },
+    {
+     "text": "more",
+     "start": 43.623,
+     "end": 43.925
+    },
+    {
+     "text": "ambitious.",
+     "start": 43.925,
+     "end": 44.41
+    }
+   ],
+   "in": 43.11,
+   "out": 45.0
+  },
+  {
+   "id": "C16",
+   "shot": "S11",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "Trust",
+     "start": 45.16,
+     "end": 45.372
+    },
+    {
+     "text": "in",
+     "start": 45.372,
+     "end": 45.533
+    },
+    {
+     "text": "our",
+     "start": 45.533,
+     "end": 45.794
+    },
+    {
+     "text": "agents,",
+     "start": 45.794,
+     "end": 46.157
+    },
+    {
+     "text": "till",
+     "start": 46.559,
+     "end": 46.942
+    },
+    {
+     "text": "ASI",
+     "start": 46.942,
+     "end": 47.707
+    },
+    {
+     "text": "comes.",
+     "start": 47.707,
+     "end": 48.05
+    }
+   ],
+   "in": 45.04,
+   "out": 48.75
+  },
+  {
+   "id": "C17",
+   "shot": "S12",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "Tests",
+     "start": 49.01,
+     "end": 49.362
+    },
+    {
+     "text": "are",
+     "start": 49.362,
+     "end": 49.503
+    },
+    {
+     "text": "green.",
+     "start": 49.503,
+     "end": 50.608
+    },
+    {
+     "text": "Amen.",
+     "start": 50.608,
+     "end": 50.83
+    }
+   ],
+   "in": 48.89,
+   "out": 51.53
+  },
+  {
+   "id": "D02",
+   "shot": "S12",
+   "speaker": "jensen",
+   "words": [
+    {
+     "text": "Ready!",
+     "start": 52.41,
+     "end": 52.869
+    }
+   ],
+   "in": 52.29,
+   "out": 53.324
+  },
+  {
+   "id": "D03",
+   "shot": "S12",
+   "speaker": "jensen",
+   "words": [
+    {
+     "text": "Commit!",
+     "start": 53.484,
+     "end": 54.113
+    }
+   ],
+   "in": 53.364,
+   "out": 54.544
+  },
+  {
+   "id": "D04",
+   "shot": "S13",
+   "speaker": "jensen",
+   "words": [
+    {
+     "text": "Push!",
+     "start": 54.704,
+     "end": 55.248
+    }
+   ],
+   "in": 54.584,
+   "out": 55.948
+  },
+  {
+   "id": "D05",
+   "shot": "S14",
+   "speaker": "jensen",
+   "words": [
+    {
+     "text": "Auto-merge!",
+     "start": 56.26,
+     "end": 57.118
+    }
+   ],
+   "in": 56.14,
+   "out": 57.818
+  },
+  {
+   "id": "D06",
+   "shot": "S15",
+   "speaker": "jensen",
+   "words": [
+    {
+     "text": "Close",
+     "start": 59.86,
+     "end": 60.172
+    },
+    {
+     "text": "your",
+     "start": 60.172,
+     "end": 60.313
+    },
+    {
+     "text": "laptops!",
+     "start": 60.313,
+     "end": 60.997
+    }
+   ],
+   "in": 59.74,
+   "out": 61.595
+  },
+  {
+   "id": "R01",
+   "shot": "S15",
+   "speaker": "chorus",
+   "words": [
+    {
+     "text": "Still",
+     "start": 61.755,
+     "end": 62.009
+    },
+    {
+     "text": "running,",
+     "start": 62.009,
+     "end": 62.375
+    },
+    {
+     "text": "sir!",
+     "start": 62.375,
+     "end": 62.62
+    }
+   ],
+   "in": 61.635,
+   "out": 63.214
+  },
+  {
+   "id": "D07",
+   "shot": "S15",
+   "speaker": "jensen",
+   "words": [
+    {
+     "text": "We",
+     "start": 63.374,
+     "end": 63.586
+    },
+    {
+     "text": "need",
+     "start": 63.586,
+     "end": 63.828
+    },
+    {
+     "text": "more",
+     "start": 63.828,
+     "end": 64.11
+    },
+    {
+     "text": "GPUs!",
+     "start": 64.11,
+     "end": 65.2
+    }
+   ],
+   "in": 63.254,
+   "out": 65.2
+  },
+  {
+   "id": "F01",
+   "shot": "S15",
+   "speaker": "firewatch",
+   "words": [
+    {
+     "text": "You're",
+     "start": 65.28,
+     "end": 65.431
+    },
+    {
+     "text": "absolutely",
+     "start": 65.431,
+     "end": 65.934
+    },
+    {
+     "text": "right,",
+     "start": 65.934,
+     "end": 66.195
+    },
+    {
+     "text": "sir!",
+     "start": 66.195,
+     "end": 66.477
+    }
+   ],
+   "in": 65.24,
+   "out": 66.67
+  }
+ ]
+}

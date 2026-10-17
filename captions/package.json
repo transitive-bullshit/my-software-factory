@@ -1,0 +1,14 @@
+{
+  "name": "captions",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.168 preview",
+    "check": "npx --yes hyperframes@0.8.168 check",
+    "render": "npx --yes hyperframes@0.8.168 render",
+    "publish": "npx --yes hyperframes@0.8.168 publish",
+    "build": "node build.mjs",
+    "captions": "node build.mjs && npx --yes hyperframes@0.8.168 render -c compositions/overlay.html --format mov -o renders/captions-overlay.mov && node composite.mjs",
+    "credits": "npx --yes hyperframes@0.8.168 render -c compositions/credits.html --crf 10 -o ../renders/full/credits.mp4"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "$comment": "ElevenLabs voices for the meme. Stock (premade) voices need no voice slot. Chorus = one hybrid concert voice built by running the guide takes through every chorus voice and stacking them; no cast member's own voice. 'lead' is the dry layer that drives lip sync on the close-ups.",
+  "models": {
+    "tts": "eleven_v4",
+    "sts": "eleven_english_sts_v2",
+    "design": "eleven_ttv_v3"
+  },
+  "chorus": [
+    {
+      "name": "Harry",
+      "voice_id": "SOYHLrjzK2X1ezoPC6cr",
+      "label": "young american, rough"
+    },
+    {
+      "name": "Liam",
+      "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+      "label": "young american, confident"
+    },
+    {
+      "name": "Will",
+      "voice_id": "bIHbv24MWmeRgasZH58o",
+      "label": "young american, chill"
+    },
+    {
+      "name": "Chris",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "label": "middle_aged american, casual"
+    },
+    {
+      "name": "Eric",
+      "voice_id": "cjVigY5qzO86Huf0OWal",
+      "label": "middle_aged american, classy"
+    },
+    {
+      "name": "Roger",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+      "label": "middle_aged american, classy"
+    },
+    {
+      "name": "Adam",
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "label": "middle_aged american, None"
+    },
+    {
+      "name": "Brian",
+      "voice_id": "nPczCjzI2devNBz1zQrb",
+      "label": "middle_aged american, classy"
+    },
+    {
+      "name": "Callum",
+      "voice_id": "N2lVS1w4EtoT3dr4eOWO",
+      "label": "middle_aged american, None"
+    },
+    {
+      "name": "Charlie",
+      "voice_id": "IKne3meq5aSn9XLyUdCD",
+      "label": "young australian, hyped"
+    }
+  ],
+  "lead": {
+    "name": "Harry",
+    "voice_id": "SOYHLrjzK2X1ezoPC6cr",
+    "why": "Gritty young American; reads as a recruit chanting"
+  },
+  "fireWatch": {
+    "read": "media/voices/firewatch/design-preview-2.mp3",
+    "voice_id": "AzIHJgJvFrkmqV5HvU8A",
+    "name": "MSF Fire watch (young private)",
+    "options": "media/voices/firewatch/options.json",
+    "why": "Author's pick: option 5, Voice Design young private (design 2); saved as a voice for regeneration"
+  },
+  "di": {
+    "provider": "fish",
+    "name": "JH Test",
+    "model_id": "540583ec7ac044dfafc1b361d332d87e",
+    "tts_model": "Fish Audio Drama 3",
+    "why": "Fish clone 'JH Test' with command directives. Author's picks: D01 take 2, D02-D06 tags-take1, D07 take 1. Reads are never re-timed.",
+    "fallback": {
+      "name": "MSF DI fallback (keynote 1)",
+      "voice_id": "U9sRvy56xHrutsIHYqfm",
+      "source": "Voice Design keynote/preview-1",
+      "why": "Author's favourite of the 9 previews; fallback until a custom Jensen voice from real audio works"
+    },
+    "reads": [
+      {
+        "file": "media/voices/jensen/d01-r2/take1.mp3",
+        "lines": [
+          "D01"
+        ],
+        "alts": [
+          "media/voices/jensen/d01-r2/take2.mp3",
+          "media/voices/jensen/d01-r2/take3.mp3",
+          "media/voices/jensen/d01-r2/take4.mp3",
+          "media/voices/jensen/d01-cmd-take2.mp3",
+          "media/voices/jensen/d01-cmd-take1.mp3"
+        ],
+        "why": "round 2 (author): the old read was hard to understand; new Fish takes directed to hit the P and T, take 1 the clearest by Whisper"
+      },
+      {
+        "file": "media/voices/jensen/d02-06-tags-take1.mp3",
+        "lines": [
+          "D02",
+          "D03",
+          "D04"
+        ],
+        "alts": [
+          "media/voices/jensen/d02-06-dots-take1.mp3",
+          "media/voices/jensen/d02-06-dots-take2.mp3",
+          "media/voices/jensen/d02-06-tags-take2.mp3",
+          "media/voices/jensen/d02-06-cmd-take2.mp3"
+        ],
+        "note": "Author's pick; used up to the clean 0.67 s pause after 'Push!' (D05-D06 come from their own read)"
+      },
+      {
+        "file": "media/voices/jensen/d05-06-long-take1.mp3",
+        "lines": [
+          "D05"
+        ],
+        "alts": [
+          "media/voices/jensen/d05-06-long-take2.mp3",
+          "media/voices/jensen/d05-06-dots-take2.mp3",
+          "media/voices/jensen/d05-06-dots-take1.mp3"
+        ],
+        "note": "Used up to the clean 0.73 s pause after 'Auto-merge!'; D06 is its own read"
+      },
+      {
+        "file": "media/voices/jensen/d06-take2.mp3",
+        "lines": [
+          "D06"
+        ],
+        "alts": [
+          "media/voices/jensen/d06-take1.mp3"
+        ],
+        "note": "Its own fresh read, so it can start on its original slot after lights-out"
+      },
+      {
+        "file": "media/voices/jensen/d07-cmd-take1.mp3",
+        "lines": [
+          "D07"
+        ],
+        "alts": [
+          "media/voices/jensen/d07-cmd-take2.mp3"
+        ]
+      }
+    ]
+  },
+  "jensenClones": {
+    "elevenlabsIvc": {
+      "voice_id": "6vbjqWGV2p7M5zCV1Sba",
+      "source": "reference/jensen/jensen-3min.mp3 (Lex Fridman #494, studio)",
+      "status": "blocked at generation: 403 voice_access_denied (detected_captcha_voice); needs speaker verification"
+    },
+    "fishAudio": {
+      "model_id": "540583ec7ac044dfafc1b361d332d87e",
+      "name": "JH Test",
+      "visibility": "private",
+      "source": "reference/jensen/jensen-85s.mp3",
+      "tts_model": "Fish Audio Drama 3"
+    }
+  }
+}

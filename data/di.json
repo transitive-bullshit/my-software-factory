@@ -1,0 +1,101 @@
+{
+  "$comment": "Where each solo line sounds, in source-clip seconds (meme time = placed - window.start). Written by scripts/di.py.",
+  "lines": {
+    "D01": {
+      "placed": [
+        39.8,
+        40.324
+      ],
+      "slot": [
+        40.65,
+        41.05
+      ],
+      "natural": 0.524,
+      "source": "media/voices/jensen/d01-r2/take1.mp3"
+    },
+    "D02": {
+      "placed": [
+        91.75,
+        92.209
+      ],
+      "slot": [
+        91.75,
+        92.15
+      ],
+      "natural": 0.459,
+      "source": "media/voices/jensen/d02-06-tags-take1.mp3"
+    },
+    "D03": {
+      "placed": [
+        92.824,
+        93.453
+      ],
+      "slot": [
+        92.5,
+        93.0
+      ],
+      "natural": 0.629,
+      "source": "media/voices/jensen/d02-06-tags-take1.mp3"
+    },
+    "D04": {
+      "placed": [
+        94.044,
+        94.588
+      ],
+      "slot": [
+        93.9,
+        94.15
+      ],
+      "natural": 0.544,
+      "source": "media/voices/jensen/d02-06-tags-take1.mp3"
+    },
+    "D05": {
+      "placed": [
+        97.45,
+        98.308
+      ],
+      "slot": [
+        97.45,
+        97.7
+      ],
+      "natural": 0.858,
+      "source": "media/voices/jensen/d05-06-long-take1.mp3"
+    },
+    "D06": {
+      "placed": [
+        99.9,
+        101.037
+      ],
+      "slot": [
+        99.9,
+        100.6
+      ],
+      "natural": 1.137,
+      "source": "media/voices/jensen/d06-take2.mp3"
+    },
+    "D07": {
+      "placed": [
+        103.414,
+        105.24
+      ],
+      "slot": [
+        104.0,
+        105.0
+      ],
+      "natural": 1.826,
+      "source": "media/voices/jensen/d07-cmd-take1.mp3"
+    },
+    "F01": {
+      "placed": [
+        105.32,
+        106.517
+      ],
+      "slot": [
+        105.32,
+        106.34
+      ],
+      "natural": 1.197,
+      "source": "media/voices/firewatch/design-preview-2.mp3"
+    }
+  }
+}
