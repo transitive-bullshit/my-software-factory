@@ -1,0 +1,13 @@
+{
+  "name": "creed-vertical",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.171 preview",
+    "check": "npx --yes hyperframes@0.8.171 check",
+    "render": "npx --yes hyperframes@0.8.171 render",
+    "publish": "npx --yes hyperframes@0.8.171 publish",
+    "build": "node build.mjs",
+    "overlay": "node build.mjs && npx --yes hyperframes@0.8.171 render -c compositions/overlay.html --format mov -o ../../renders/promo/creed-vertical/overlay.mov"
+  }
+}

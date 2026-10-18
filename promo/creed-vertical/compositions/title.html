@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <!-- The title frame (frame 0 only, so it is the post's preview and cover): the 16:9 title (../../captions/
+         compositions/title.html) in the captions' own treatment, the dark band, Oswald in capitals and the gold glow of a
+         lit word, stacked for a phone over the DI's first frame. It sits in the lower third, clear of his face, and
+         inside the 3:4 crop of a profile grid (y 240-1680). The frame shows for one frame in a feed, so the feed's safe
+         area (y 260-1360) doesn't bind it. -->
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Oswald", sans-serif;
+        }
+        .stack {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 300px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 14px;
+        }
+        .band {
+          border-radius: 16px;
+          background: rgba(13, 14, 11, 0.66);
+          font-weight: 700;
+          text-transform: uppercase;
+          white-space: nowrap;
+          text-align: center;
+        }
+        .title {
+          padding: 14px 42px 22px;
+          font-size: 104px;
+          line-height: 1.02;
+          letter-spacing: 0.4px;
+          color: rgb(255, 196, 72);
+          text-shadow: 0 0 40px rgba(255, 170, 40, 0.85);
+        }
+        .subtitle {
+          padding: 12px 30px 15px;
+          font-size: 36px;
+          font-weight: 400;
+          letter-spacing: 0.12em;
+          color: rgb(214, 208, 194);
+        }
+        .subtitle em {
+          font-style: normal;
+          font-weight: 500;
+          color: rgb(236, 230, 214);
+        }
+      </style>
+      <div id="root" data-composition-id="title" data-width="1080" data-height="1920">
+        <div class="stack">
+          <div class="band title">The AI<br />Engineer's<br />Creed</div>
+          <div class="band subtitle">A parody of <em>Full Metal Jacket</em></div>
+        </div>
+      </div>
+      <script>
+        window.__timelines["title"] = gsap.timeline({ paused: true });
+      </script>
+    </template>
+  </body>
+</html>
